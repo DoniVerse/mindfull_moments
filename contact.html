@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./contact.css" />
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Mindfull Moments</title>
+</head>
+<body>
+    <section class="front-page">
+    
+         <div class="navbar">
+            <div class="logo">
+                         <img src="./assets/logo.svg" alt="mind and body" />
+                         <h1>Mindfull Moments</h1>
+                     </div>
+             <ul>
+                 <li><a href="index.html" class="nav-link">HOME</a></li>
+                 <li><a href="about.html"class="nav-link">ABOUT</a></li>
+                 <!-- <li><a href="#">SERVICE</a></li> -->
+                 
+                 <li><a href="contact.html" class="nav-link">CONTACT</a></li>
+                 <li><a href="signup.php" class="nav-link">SIGN UP</a></li>
+                 <li><a href="Login.php" class="nav-link">LOGIN </a></li>
+             </ul>
+             <style>
+                 .nav-link.active {
+           text-decoration: underline;
+         }
+             </style>
+             <script>
+                 // Get all navigation links
+         const navLinks = document.querySelectorAll('.nav-link');
+         
+         // Get the current URL path
+         const currentPath = window.location.pathname;
+         
+         // Iterate through each link and add the 'active' class if it matches the current path
+         navLinks.forEach(link => {
+           if (link.href.endsWith(currentPath)) {
+             link.classList.add('active');
+           }
+         });
+             </script>
+        
+        <div class="container">
+            <span class="big-circle"></span>
+            <img src="img/shape.png" class="square" alt="" />
+            <div class="form">
+              <div class="contact-info">
+                <h3 class="title">Let's get in touch</h3>
+                <p class="text">
+                  Please fill out the form below to get in touch with us. We'll respond to your message as soon as possible. For urgent inquiries, please call us at Phone Number .
+                </p>
+      
+                <div class="info">
+                  <div class="information">
+                    <img src="img/location.png" class="icon" alt="" />
+                    <p>somewhere</p>
+                  </div>
+                  <div class="information">
+                    <img src="img/email.png" class="icon" alt="" />
+                    <p>mindfulmoments156@gmail.com</p>
+                  </div>
+                  <div class="information">
+                    <img src="img/phone.png" class="icon" alt="" />
+                    <p>
+                      +12590847484
+                    </p>
+                  </div>
+                </div>
+      
+                <div class="social-media">
+                  <p>Connect with us :</p>
+                  <div class="social-icons">
+                    <a href="#">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#">
+                      <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#">
+                      <i class="fab fa-linkedin-in"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="contact-form">
+                <span class="circle one"></span>
+                <span class="circle two"></span>
+      
+                <form action="index.html" autocomplete="off">
+                  <h3 class="title">Contact us</h3>
+                  <div class="input-container">
+                    <input type="text" name="name" class="input" />
+                    <label for="">Username</label>
+                    <span>Username</span>
+                  </div>
+                  <div class="input-container">
+                    <input type="email" name="email" class="input" />
+                    <label for="">Email</label>
+                    <span>Email</span>
+                  </div>
+                  <div class="input-container">
+                    <input type="tel" name="phone" class="input" />
+                    <label for="">Phone</label>
+                    <span>Phone</span>
+                  </div>
+                  <div class="input-container textarea">
+                    <textarea name="message" class="input"></textarea>
+                    <label for="">Message</label>
+                    <span>Message</span>
+                  </div>
+                  <input type="submit" value="Send" class="btn" />
+                </form>
+              </div>
+            </div>
+          </div>
+      
+          <script src="contact.js"></script>
+          <div class="footer">
+            &copy; 2024 Mindful Moments. All rights reserved.
+        </body>
+      </html>
+      

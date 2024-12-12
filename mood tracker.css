@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #B3C7CF;
+    margin: 0;
+    padding: 20px;
+}
+
+.worksheet {
+    max-width: 800px;
+    margin: auto;
+    /* background: #5e63ff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+    text-align: center;
+}
+
+h1 {
+    color: #89a8b2;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #E5E1DA;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+/* form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+form input[type="text"], 
+form input[type="date"] {
+    padding: 5px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+} */
+
+.instructions {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.emotion {
+    /* text-align: center; */
+    /* background: #f0f4ff; */
+    padding: 10px;
+    /* border-radius: 10px; */
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+   
+}
+
+.emotion img {
+    /* max-width: 100px;
+    margin-bottom: 10px; */
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 10px ;
+    
+}
+.emotion :hover {
+        transform: scale(1.1); /* Zoom in the image */
+        opacity: 0.8; /* Add transparency */
+    }
+
+/* .emotion input, 
+.emotion textarea {
+    width: 90%;
+    margin: 5px 0;
+    padding: 5px;
+    font-size: 0.9em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+} */
+
+/* .emotion textarea {
+    resize: none;
+    height: 60px;
+} */
+.footer {
+    margin-top: auto;
+    padding: 500px;
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+  }

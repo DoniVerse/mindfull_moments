@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css" />
+    <title>Mindfull Moments</title>
+</head>
+<body>
+    <section class="front-page">
+        <img class="hero" src="./assets/1.jpg" alt="meditation" />
+        <nav>
+            <div class="logo">
+                <img src="./assets/logo.svg" alt="mind and body" />
+               
+                <h1>Mindfull Moments</h1>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html" class="nav-link">HOME</a></li>
+                    <li><a href="about.html"class="nav-link">ABOUT</a></li>
+                    <!-- <li><a href="#">SERVICE</a></li> -->
+                    
+                    <li><a href="contact.html" class="nav-link">CONTACT</a></li>
+                    <li><a href="signup.php" class="nav-link">SIGN UP</a></li>
+                    <li><a href="login.html" class="nav-link">LOGIN </a></li>
+                </ul>
+                <style>
+                    .nav-link.active {
+              text-decoration: underline;
+            }
+                </style>
+                <script>
+                    // Get all navigation links
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            // Get the current URL path
+            const currentPath = window.location.pathname;
+            
+            // Iterate through each link and add the 'active' class if it matches the current path
+            navLinks.forEach(link => {
+              if (link.href.endsWith(currentPath)) {
+                link.classList.add('active');
+              }
+            });
+                </script>
+                
+                </ul>
+            </div>
+        </nav>
+        <div class="selling-point">
+            <h2>Let your mind breathe.</h2>
+            <h3>
+                "What lies behind you and what lies in front of you, pales in comparison to what lies inside of you."
+                <br>Ralph Waldo Emerson
+            </h3>
+            <div class="ctas">
+        
+                <button class="cta-main">
+                    <a href="signup.php" >Sign up today</a>
+                </button>
+            </div>
+        </div>
+    </section>
+    <section id="classes" class="classes">
+        <div class="classes-description">
+            <h2>Exercise tailored for you</h2>
+            <h3>It's time to heal your mind and body</h3>
+        </div>
+        <div class="videos">
+             
+            <div class="pilates">
+                <h3>Pilates</h3>
+                <video controls autoplay muted loop class="video" src="./assets/pilates.mp4"></video>
+            </div>
+            <div class="yoga">
+                <h3>Yoga</h3>
+                <video controls autoplay muted loop class="video" src="./assets/yoga.mp4"></video>
+            </div>
+            <div class="meditation">
+                <h3>Meditation</h3>
+                <video controls autoplay muted loop class="video" src="./assets/meditation.mp4"></video>
+                
+            </div>
+        </div>
+        <style>
+            video{
+                pointer-events: none;
+            }
+        </style>
+    </section>
+    <section class="about">
+        <div id="our-story" class="our-story">
+            <h2>Our story...</h2>
+            <p>
+                "Our journey began with a simple idea: to create a space where people can reconnect with themselves through intentional movement and daily practices. We saw the need for a calm, accessible approach to wellness that fits into modern life."
+            </p>
+        </div>
+        <img src="./assets/our-story.png" alt="our-story" />
+    </section>
+</body>
+<div class="footer">
+    &copy; 2024 Mindful Moments. All rights reserved.
+</html>

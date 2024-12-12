@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A-Z Mental Diseases</title>
+    <link rel="stylesheet" href="condition.css">
+    
+    <style>
+
+body {
+            
+            background: linear-gradient(to bottom, #89A8B2, #B3C8CF, #E5E1DA, #F1F0E8);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin: 20px;
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .disease-list {
+            flex: 1;
+            padding: 10px;
+        }
+
+        .disease-list ul {
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .disease-list li {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        .image-container {
+            flex: 1;
+            text-align: center;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+    </style>
+
+
+
+   
+</head>
+<body style="background: linear-gradient(to bottom, #89A8B2, #B3C8CF, #E5E1DA, #F1F0E8) ;">
+    <div class="container">
+        <h1 style="font-size: 50;">Condition A-Z</h1><br>
+        
+        <div style="display: flex; justify-content: ; gap: 50px;">
+            <img src="anxiety.avif" alt="anxiety" style="width: 15%; display: inline-block;border-radius: 60%;">
+            <img src="depression.jpg" alt="depression" style="width: 15%; display: inline-block;border-radius: 60%;">
+            <img src="meditation.jpg" alt="meditation" style="width: 15%; display: inline-block;border-radius: 60%;">
+            <img src="self improvement.jpg" alt="self improvement" style="width: 15%; display: inline-block;border-radius: 60%;">
+            <img src="therapy 2.webp" alt="therapy" style="width: 15%; display: inline-block;border-radius: 60%;">
+            </div><br><br>
+    
+    
+       
+        <div class="alphabet-buttons">
+            <input 
+            type="text" 
+            id="search-bar" 
+            placeholder="Search conditions..." 
+            oninput="searchDiseases()"
+        ><br><br>
+        <h2>Find a Topic By its First Letter:</h2>
+            
+            <!-- Alphabet Buttons -->
+            <button class="letter" onclick="showDiseases('A')">A</button>
+            <button class="letter" onclick="showDiseases('B')">B</button>
+            <button class="letter" onclick="showDiseases('C')">C</button>
+            <button class="letter" onclick="showDiseases('D')">D</button>
+            <button class="letter" onclick="showDiseases('E')">E</button>
+            <button class="letter" onclick="showDiseases('F')">F</button>
+            <button class="letter" onclick="showDiseases('G')">G</button>
+            <button class="letter" onclick="showDiseases('H')">H</button>
+            <button class="letter" onclick="showDiseases('I')">I</button>
+            <button class="letter" onclick="showDiseases('J')">J</button>
+            <button class="letter" onclick="showDiseases('K')">K</button>
+            <button class="letter" onclick="showDiseases('L')">L</button>
+            <button class="letter" onclick="showDiseases('M')">M</button>
+            <button class="letter" onclick="showDiseases('N')">N</button>
+            <button class="letter" onclick="showDiseases('O')">O</button>
+            <button class="letter" onclick="showDiseases('P')">P</button>
+            <button class="letter" onclick="showDiseases('Q')">Q</button>
+            <button class="letter" onclick="showDiseases('R')">R</button>
+            <button class="letter" onclick="showDiseases('S')">S</button>
+            <button class="letter" onclick="showDiseases('T')">T</button>
+            <button class="letter" onclick="showDiseases('U')">U</button>
+            <button class="letter" onclick="showDiseases('V')">V</button>
+            <button class="letter" onclick="showDiseases('W')">W</button>
+            <button class="letter" onclick="showDiseases('X')">X</button>
+            <button class="letter" onclick="showDiseases('Y')">Y</button>
+            <button class="letter" onclick="showDiseases('Z')">Z</button>
+        </div>
+        
+        
+        
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <button class="close-popup" onclick="closePopup()">×</button>
+                <div id="disease-list">
+                    <!-- Diseases will be dynamically added here -->
+                </div>
+                
+                <div id="description">
+                    <!-- Disease description will be displayed here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <table>
+        <tr>
+            <td><h2>LISTS OF Conditions</h2>
+        <ul></ul>
+        <button>A</button>
+        <li>Anxiety Disorder</li>
+        <li>Adjustment Disorder</li>
+        <li>Amnesia</li>
+    </ul>
+     <button>B</button>
+    <li>Body Dismorphic Disorder</li>
+    <li> Bulimia Nervosa</li>
+    <li>Bipolar Disorder</li>
+     <button>C</button>
+     <li>Cyclotymic Disorder</li>
+     <li>Conduct Disoder </li>
+     <li>Cotard Delusion</li>
+     <button>D</button>
+     <li>Dissociative identity Disorder</li>
+     <li>Delirium</li>
+     <li>Depression</li>
+     <button>E</button>
+     <li>Encopresis</li>
+     <li>Eating Disoder </li>
+     <li>Excoriation Disorder</li>
+     <button>F</button>
+     <li>Fatal Alchol Syndromr</li>
+     <li>Fugue State </li>
+     <li>Factitious</li>
+     <button>G</button>
+     <li>Gender Disphoria</li>
+     <li>Generalized anxiety disorder </li>
+     
+    <button>H</button>
+     <li>Hypochondria</li>
+     <li>Histrionic personality Disoder </li>
+     <li>Hoarding disorder</li>
+     <button>I</button>
+     <li>Intermittent explosive Disorder</li>
+     <li>insomnia Disoder </li>
+     <li>illness anxiety Disorder</li>
+     <button>J</button>
+     <li>Juvenile Bipolar Disorder</li>
+     <li>job burnout syndrome </li>
+     <button>K</button>
+     <li>Kleptomania</li>
+     <li>Korsakoff syndrome </li>
+     <button>L</button>
+     <li>Lethargy Syndrome</li>
+     <li> Limbic Encephalitis</li>
+     <button>M</button>
+     <li>Major Depressive Disorder </li>
+     <li>Mood Dysregulation Disorder</li>
+     <button>N</button>
+     <li> Narcolepsy</li>
+     <li> Neurocognitive  Disorder</li>
+     <button>O</button>
+     <li> Obsessive-Compulsive Disorder </li>
+     <li> Oppositional Defiant  Disorder</li>
+     <button>P</button>
+     <li>Panic Disorder </li>
+     <li> Post-Traumatic Stress Disorder</li>
+     <button>Q</button>
+     <li>Quotidian Stress Disorder </li>
+     <li> Quiet Borderline Personality Disorder</li>
+     <button>R</button>
+     <li>Reactive Attachment Disorder </li>
+     <li>Rumination Disorder </li>
+     <button>S</button>
+     <li>Schizophrenia </li>
+     <li> Social Anxiety Disorder</li>
+     <button>T</button>
+     <li>Tourette SyndromeTourette Syndrome </li>
+     <li> Trichotillomania</li>
+     <button>U</button>
+     <li>Unipolar Depression </li>
+     <li>Urbach-Wiethe Disease </li>
+     <button>V</button>
+     <li>Victim Syndrome </li>
+     <li>Vascular Dementia </li>
+     <button>W</button>
+     <li>Wernicke’s Encephalopathy </li>
+     <li>Withdrawal Syndrome </li>
+     <button>X</button>
+     <li>X-Linked Intellectual Disability </li>
+     <li>Xeroderma-Related Depression </li>
+     <button>Y</button>
+     <li>Youth-Onset Schizophrenia </li>
+     <li>Yoga Addiction Syndrome </li>
+     <button>Z</button>
+     <li>Zellweger Spectrum Disorder</li>
+     <li> Zoophobia</li></td> 
+            <td><div class="image-container";>
+                <img src="healthy.jpg" alt="healthy" style="width: 50%; display: inline-block;border-radius: 60%;">
+            </div></td>
+        </tr>
+    </table>-->
+    
+     <div class="image-container";>
+        <img src="last image.jpg" alt="quote" style="width: 50%; display: inline-block;border-radius: 60%;">
+    </div>
+      <script src="condition.js"></script>
+      <div class="footer">
+        &copy; 2024 Mindful Moments. All rights reserved.
+</body>
+</html>
