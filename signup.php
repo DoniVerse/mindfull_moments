@@ -1,35 +1,79 @@
+<?php
+require_once 'includes/autoloader.inc.php';
+session_start();
 
+if(isset($_POST['submit'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $email = $_POST['email'];
+    $confirmPassword = $_POST['confirm_password'];
+     // Password Validation Function
+    function validatePassword($password) {
+        // Regex Pattern for Validation
+        $pattern = '/^(?=.*[A-Z].*[A-Z])  # At least 2 uppercase letters
+                     (?=.*[a-z])           # At least 1 lowercase letter
+                     (?=.*\d.*\d.*\d)     # At least 3 numbers
+                     (?=.*[\W_].*[\W_])  # At least 2 special characters
+                     .{8,}$               # Minimum 8 characters
+                    /x';
+
+        return preg_match($pattern, $password);
+    }
+    if(empty($username) || empty($password) || empty($email) || empty($confirmPassword)) {
+        $error = "All fields are required";
+    } elseif($password !== $confirmPassword) {
+        $error = "Passwords do not match";
+    } 
+    elseif (!validatePassword($password)) {
+        $error = "Password must be at least 8 characters, 
+        include 2 uppercase letters, 3 numbers, 1 lowercase letter, 
+        and 2 special characters.";
+    } 
+    else {
+        $user = new User();
+        $result = $user->register($username, $password);
+        
+        if($result === "success") {
+            header("Location: login.php?registered=success");
+            exit();
+        } else {
+            $error = $result;
+        }
+    }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>signup</title>
+    <title>Signup</title>
     <link rel="stylesheet" href="signup.css">
 </head>
 <body>
-<div class="signup-form">
-        <h2>Sign Up</h2>
-        <form action="signup2.php" method="POST">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            
-            <button type="submit" class="button"><a href="landing.html">Sign Up</button>
-            <style>
-                .button a{
-                    text-decoration:none;
-                }
-                .button a:hover{
-                    color:black;
-
-                }
-            </style>
+    <div class="login-container">
+        <h2>Register</h2>
+        <?php if(isset($error)) echo "<p class='error'>$error</p>"; ?>
+        <form method="POST">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username" required>
+            </div> <div class="form-group">
+                <label for="email">Password:</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm_password">Confirm Password:</label>
+                <input type="password" name="confirm_password" id="confirm_password" required>
+            </div>
+            <button type="submit" name="submit">Register</button>
         </form>
+        <p class="form-link">Already have an account? <a href="login.php">Login here</a></p>
+    </div>
 </body>
 </html>
