@@ -8,12 +8,12 @@ if(isset($_POST['submit'])) {
     
     $user = new User();
     if($user->login($username, $password)) {
-        header("Location: landing.html");
+        header("Location: dashboard.html");
         exit();
     } else {
         $error = "Invalid username or password";
     }
-
+}
 ?>
 
 
