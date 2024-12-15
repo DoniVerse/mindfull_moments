@@ -53,7 +53,7 @@ if(isset($_POST['submit'])) {
 </head>
 <body>
     <div class="login-container">
-        <h2>Register</h2>
+        <h2>signup</h2>
         <?php if(isset($error)) echo "<p class='error'>$error</p>"; ?>
         <form method="POST">
             <div class="form-group">
@@ -71,7 +71,7 @@ if(isset($_POST['submit'])) {
                 <label for="confirm_password">Confirm Password:</label>
                 <input type="password" name="confirm_password" id="confirm_password" required>
             </div>
-            <button type="submit" name="submit">Register</button>
+            <button type="submit" name="submit">signup</button>
         </form>
         <p class="form-link">Already have an account? <a href="login.php">Login here</a></p>
     </div>

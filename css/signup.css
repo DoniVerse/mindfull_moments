@@ -6,14 +6,14 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: #f4f4f4;
+    background: linear-gradient(-45deg, #89A8B2, #B3c8cf, #e5e1da, #f1f0e8);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
 }
 
-/* Centered container */
+/* Center container */
 .login-container {
     background: white;
     padding: 2rem;
@@ -26,10 +26,10 @@ body {
 
 h2 {
     margin-bottom: 1.5rem;
-    color: #333;
+    color:greenyellow;
 }
 
-/* Error Message */
+/* for error */
 .error {
     color: red;
     margin-bottom: 1rem;
@@ -67,7 +67,7 @@ button[type="submit"] {
     padding: 0.7rem;
     font-size: 1rem;
     color: white;
-    background: #333;
+    background: #98c1d9;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -75,7 +75,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background: #555;
+    background: #98c1d9;
 }
 
 .form-link {

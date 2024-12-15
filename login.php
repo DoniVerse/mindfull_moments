@@ -25,24 +25,29 @@ if(isset($_POST['submit'])) {
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>login</title>
-   <link rel="stylesheet" href="css/login.css">
+   <link rel="stylesheet" href="css/signup.css">
 </head>
 <body>
-   <div class="signup-form">
-       <h2>login</h2>
-       <?php 
+<div class="login-container">
+        <h2>Login</h2>
+        <?php 
         if(isset($_GET['registered']) && $_GET['registered'] === 'success') {
             echo "<p class='success'>Registration successful! Please login.</p>";
         }
         if(isset($error)) echo "<p class='error'>$error</p>"; 
         ?>
-       <form action="" method="POST">
-           <label for="username">Username:</label>
-           <input type="text" id="username" name="username" required>
-           <label for="password">Password:</label>
-           <input type="password" id="password" name="password" required>
-           
-           <button type="submit">login</button>
-       </form>
+        <form method="POST">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+            <button type="submit" name="submit">Login</button>
+        </form>
+        <p class="form-link">Don't have an account? <a href="signup.php">Register here</a></p>
+    </div>
 </body>
 </html>
