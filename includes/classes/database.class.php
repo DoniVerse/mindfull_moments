@@ -3,12 +3,13 @@
 class database {
     private $host = "localhost";
     private $user = "root";
-    private $email = ""
+    private $email = "";
     private $pwd = "";
     private $dbName = "user_db";
     protected $conn;
 
     protected function connect() {
+        $this->conn = new mysqli($this->host, $this->user, $this->pwd, $this->dbName);
         //database user_db creation
         $sql = "CREATE DATABASE IF NOT EXISTS $this->dbName";
         if ($this->conn->query($sql) === TRUE) {
@@ -35,7 +36,8 @@ class database {
 
         // Connect to the created database
         $this->conn->select_db($this->dbName);
-        $this->conn = new mysqli($this->host, $this->user,$this->$email, $this->pwd, $this->dbName);
+       
+
 
         if ($this->conn->connect_error) {
             die("Connection failed: " . $this->conn->connect_error);

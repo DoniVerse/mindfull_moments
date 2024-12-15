@@ -1,7 +1,10 @@
 <?php
 
 
-class User extends Db {
+class User extends database {
+    public function __construct() {
+        $this->connect();  // Establish connection from parent class
+    }
     public function login($username, $password) {
         $this->connect();
         

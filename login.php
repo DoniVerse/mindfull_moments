@@ -1,5 +1,5 @@
 <?php
-require_once 'includes/autoloader.inc.php';
+require_once __DIR__ . '/includes/autoloader.inc.php';
 session_start();
 
 if(isset($_POST['submit'])) {
@@ -25,7 +25,7 @@ if(isset($_POST['submit'])) {
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>login</title>
-   <link rel="stylesheet" href="login.css">
+   <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
    <div class="signup-form">
