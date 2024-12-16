@@ -1,0 +1,155 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+}
+
+header {
+background:#89A8B2;
+color: white;
+padding: 15px;
+text-align: center;
+}
+form {
+    display: none; /* Hide by default */
+    flex-direction: column;
+    padding: 20px;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+}
+
+.done-button {
+background:#B3C8CF;
+color: white;
+border: none;
+border-radius: 4px;
+padding: 10px 20px;
+cursor: pointer;
+position: absolute;
+bottom: 20px;
+right: 20px;
+transition: background 0.3s;
+}
+
+
+.done-button:hover {
+background:#E5E1DA;
+}
+
+.entry-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px; /* Space between entries */
+}
+
+.entry-box {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(30% - 20px); /* Flex item size */
+    min-width: 250px; /* Minimum width for each entry box */
+    cursor: pointer; /* Pointer cursor to indicate clickability */
+}
+
+.entry-content {
+    max-height: 60px; /* Limit height to show only a few lines */
+    overflow: hidden;  /* Hide overflow text */
+    text-overflow: ellipsis; /* Add ellipsis for overflow */
+    white-space: nowrap; /* Prevent wrapping */
+    margin-bottom: 10px; /* Space below the content */
+}
+
+.delete-button {
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+    float: right; /* Align to right */
+}
+
+.delete-button:hover {
+    background: darkred;
+}
+
+.add-button {
+position: fixed;
+bottom: 20px;
+left: 20px;
+width: 50px;
+height: 50px;
+background-color:#B3C8CF;
+color: white;
+border: none;
+border-radius: 50%;
+font-size: 24px;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+transition: background-color 0.3s;
+}
+
+.add-button:hover {
+    background-color:#E5E1DA;
+}
+
+.add-button:focus {
+    outline: none;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    z-index: 999; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    max-width: 600px; /* Max width for modal */
+    border-radius: 8px; /* Rounded corners */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
