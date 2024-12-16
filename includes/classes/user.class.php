@@ -2,6 +2,9 @@
 
 
 class User extends database {
+    
+
+
     public function __construct() {
         $this->connect();  // Establish connection from parent class
     }
@@ -76,6 +79,45 @@ class User extends database {
         session_unset();
         session_destroy();
     }
+    public function updateProfile($userId, $username, $profileImage) {
+        // Create a secure SQL query using prepared statements
+        $sql = "UPDATE users 
+                SET username = ?, 
+                    profile_picture = ? 
+                WHERE id = ?";
+    
+        try {
+            // Prepare the query
+            $stmt = $this->conn->prepare($sql);
+    
+            // Check if statement preparation was successful
+            if (!$stmt) {
+                throw new Exception("Statement preparation failed: " . $this->conn->error);
+            }
+    
+            // Bind parameters securely
+            $stmt->bind_param("ssi", $username, $profileImage, $userId);
+    
+            // Execute the query
+            if (!$stmt->execute()) {
+                throw new Exception("Execution failed: " . $stmt->error);
+            }
+    
+            // Update the session username after a successful update
+            $_SESSION['username'] = $username;
+    
+            // Close the statement and return success
+            $stmt->close();
+            return true;
+    
+        } catch (Exception $e) {
+            // Handle errors gracefully
+            error_log($e->getMessage());  // Log error for troubleshooting
+            return false;
+        }
+    }
+    
+    
 }
 
 

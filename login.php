@@ -8,7 +8,7 @@ if(isset($_POST['submit'])) {
     
     $user = new User();
     if($user->login($username, $password)) {
-        header("Location: dashboard.html");
+        header("Location: dashboard.php");
         exit();
     } else {
         $error = "Invalid username or password";

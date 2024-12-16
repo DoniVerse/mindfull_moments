@@ -1,7 +1,11 @@
 const toggleButton = document.getElementById('toggle-btn')
 const sidebar = document.getElementById('sidebar')
+const sideprofile = document.getElementById('profilePic')
+const profileMenu = document.getElementById('profileMenu')
 
 function toggleSidebar(){
+  sideprofile.classList.toggle('close')
+  profileMenu.classList.toggle('close')
   sidebar.classList.toggle('close')
   toggleButton.classList.toggle('rotate')
 
@@ -29,3 +33,7 @@ function closeAllSubMenus(){
     ul.previousElementSibling.classList.remove('rotate')
   })
 }
+// function toggleProfileMenu() {
+//   const profileMenu = document.getElementById("profileMenu");
+//   profileMenu.classList.toggle("hidden");
+// }

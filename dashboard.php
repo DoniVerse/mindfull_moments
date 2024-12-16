@@ -1,3 +1,13 @@
+<?php
+// Start the session
+session_start();
+
+// Check if the user is logged in
+if (isset($_SESSION['username'])) {
+    $username = htmlspecialchars($_SESSION['username']);  // Sanitize output
+} 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,12 +15,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mindful Moments</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/landing.css">
+  <script type="text/javascript" src="javascript/landing.js" defer></script>
 </head>
 <body>
-    <link rel="stylesheet" href="landing.css">
-  <script type="text/javascript" src="landing.js" defer></script>
+    
   
   <nav id="sidebar">
+    <div class="sidebar-profile" onclick="toggleProfileMenu()">
+      <img src="img/default_pic.png" alt="Profile Picture" id="profilePic">
+      
+  </div>
+
+  <!-- Collapsible Profile Menu -->
+  <ul id="profileMenu" class="profile-menu hidden">
+      <li>
+          <span class="profile-username" id="usernameDisplay"><?php echo $username?></span>
+      </li>
+      <li>
+          <a href="edit_profile.php" target="_parent" class="edit-profile-btn">Edit Profile</a>
+      </li>
+  </ul>
     <ul>
       <li>
         <span class="logo">Mindful Moments</span>
