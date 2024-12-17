@@ -31,8 +31,7 @@ body{
   padding: 5px 1em;
   background-color: var(--base-clr);
   border-right: 1px solid var(--line-clr);
-
-  position: sticky;
+  position: relative;
   top: 0;
   align-self: start;
   transition: 300ms ease-in-out;

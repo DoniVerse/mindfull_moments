@@ -5,15 +5,16 @@ require_once 'includes/autoloader.inc.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     $profile_picture = $_FILES['profile_picture'];
+    $temp_file= $_FILES['profile_picture']['tmp_name'];
 
     $user = new User();
 
     // Handle Profile Picture Upload
     if ($profile_picture['error'] === UPLOAD_ERR_OK) {
-        $targetDir = "uploads/";
-        $fileName = uniqid() . "-" . basename($profile_picture["name"]);
+        $targetDir = 'uploads/';
+         $fileName = uniqid() . "-" . basename($profile_picture['name']);
         $targetFile = $targetDir . $fileName;
-        move_uploaded_file($profile_picture["tmp_name"], $targetFile);
+        move_uploaded_file($temp_file , $targetFile);
     } else {
         $targetFile = "img/default_pic.png"; // Default image
     }
@@ -23,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($result) {
         echo "Profile updated successfully!";
-        header("Location: dashboard.html");
+        header("Location: dashboard.php");
         exit;
     } else {
         echo "Error updating profile!";
@@ -41,12 +42,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>edit profile</title>
     <link rel="stylesheet" href="css/landing.css">
+    <script type="text/javascript" src="javascript/landing.js" defer></script>
 </head>
 <body>
     <form  method="POST" enctype="multipart/form-data">
         <!-- File Upload -->
         <label for="profile_picture" class="profile-pic-label">
-            <img src="default-avatar.png" alt="Profile Picture" id="profilePreview">
+            <img src="img/default_pic.png" alt="Profile Picture" id="profilePreview">
             <input type="file" id="profile_picture" name="profile_picture" accept="image/*" onchange="previewImage(event)">
         </label>
     

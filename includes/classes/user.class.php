@@ -96,7 +96,7 @@ class User extends database {
             }
     
             // Bind parameters securely
-            $stmt->bind_param("ssi", $username, $profileImage, $userId);
+            $stmt->bind_param("ssi", $username, $profile_picture, $userId);
     
             // Execute the query
             if (!$stmt->execute()) {

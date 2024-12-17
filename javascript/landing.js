@@ -33,6 +33,20 @@ function closeAllSubMenus(){
     ul.previousElementSibling.classList.remove('rotate')
   })
 }
+function previewImage(event) {
+  // Get the selected file from the input
+  const file = event.target.files[0]; 
+  
+  // Check if a file was selected
+  if (file) {
+      // Get the <img> element by its ID
+      const preview = document.getElementById('profilePreview');
+      
+      // Create a URL for the selected file and set it as the <img> source
+      preview.src = URL.createObjectURL(file); 
+  }
+}
+
 // function toggleProfileMenu() {
 //   const profileMenu = document.getElementById("profileMenu");
 //   profileMenu.classList.toggle("hidden");
