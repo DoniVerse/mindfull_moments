@@ -31,17 +31,36 @@ body{
   padding: 5px 1em;
   background-color: var(--base-clr);
   border-right: 1px solid var(--line-clr);
-  position: relative;
-  top: 0;
+  /* position: relative; */
+
   align-self: start;
+   text-wrap: nowrap;
+  overflow-y: auto; /* Add scrolling */
+  position: fixed;
+  left: 0;
+  top: 0;
   transition: 300ms ease-in-out;
-  overflow: hidden;
-  text-wrap: nowrap;
 }
 #sidebar.close{
   padding: 5px;
   width: 60px;
 }
+.profile-menu {
+  display: none;
+  text-align: center;
+}
+
+.profile-menu.show {
+  display: block;
+}
+.sidebar-profile {
+  cursor: pointer;
+}
+
+#toggle-profile {
+  display: none;
+}
+
 #sidebar ul{
   list-style: none;
 }
@@ -155,11 +174,11 @@ main p{
   color: #e8eaed;
 }
 
-.profile-menu {
+/* .profile-menu {
   list-style-type: none;
   padding: 0;
   text-align: center;
-}
+} */
 
 /* .profile-menu.hidden {
   display: none;
@@ -266,22 +285,35 @@ main p{
   }
   main{
     padding: 2em 1em 60px 1em;
+    margin-top: 60px;
   }
   .container{
     border: none;
     padding: 0;
   }
   #sidebar{
-    height: 60px;
     width: 100%;
     border-right: none;
     border-top: 1px solid var(--line-clr);
     padding: 0;
-    position: fixed;
     top: unset;
     bottom: 0;
+    height: auto;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    overflow-x: auto;
+    #sidebar ul {
+      display: flex;
+      flex-direction: row;
+    }
+  
+    #sidebar ul li {
+      width: 60px;
+    }
 
-    > ul{
+    ul{
       padding: 0;
       display: grid;
       grid-auto-columns: 60px;
