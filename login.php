@@ -44,10 +44,22 @@ if(isset($_POST['submit'])) {
             <div class="form-group">
                 <label for="password">Password:</label>
                 <input type="password" name="password" id="password" required>
+                <span id="toggle-password" class="toggle-text">Hide</span>
             </div>
             <button type="submit" name="submit">Login</button>
         </form>
         <p class="form-link">Don't have an account? <a href="signup.php">Register here</a></p>
     </div>
+    <script>
+        const passwordInput = document.getElementById("password");
+const togglePassword = document.getElementById("toggle-password");
+
+togglePassword.addEventListener("click", () => {
+  const isPasswordVisible = passwordInput.type === "text";
+  passwordInput.type = isPasswordVisible ? "password" : "text";
+  togglePassword.textContent = isPasswordVisible ? "Show" : "Hide";
+});
+
+    </script>
 </body>
 </html>

@@ -46,7 +46,16 @@ function previewImage(event) {
       preview.src = URL.createObjectURL(file); 
   }
 }
+// Toggle Sidebar
+function toggleSidebar() {
+  sidebar.classList.toggle("close");
+}
 
+// Toggle Profile Menu
+function toggleProfileMenu() {
+  const profileMenu = document.getElementById("profileMenu");
+  profileMenu.classList.toggle("show");
+}
 // function toggleProfileMenu() {
 //   const profileMenu = document.getElementById("profileMenu");
 //   profileMenu.classList.toggle("hidden");
