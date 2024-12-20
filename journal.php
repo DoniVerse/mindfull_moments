@@ -60,6 +60,7 @@ $result = $conn->query("SELECT * FROM journals ORDER BY created_at DESC");
     <header>
         <h1>My Journal</h1>
     </header>
+    
 
     <form method="POST" id="journal-form">
         <textarea name="entry" placeholder="Write your journal entry here..." required></textarea>
