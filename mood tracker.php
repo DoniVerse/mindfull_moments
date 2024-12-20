@@ -1,4 +1,5 @@
 <?php
+require_once 'includes/autoloader.inc.php';
 // Database connection
 $servername = "localhost";
 $username = "root"; // Your MySQL username

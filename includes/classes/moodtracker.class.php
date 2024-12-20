@@ -1,5 +1,5 @@
 <?php
-require 'Database.php';
+
 
 class MoodTracker extends Database {
     // Log a mood entry
