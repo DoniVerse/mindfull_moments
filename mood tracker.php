@@ -1,3 +1,15 @@
+<?php
+// Database connection
+$servername = "localhost";
+$username = "root"; // Your MySQL username
+$password = ""; // Your MySQL password
+$dbname = "mood_tracker"; // Your database name
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}?>
 
 <!DOCTYPE html>
 <html lang="en">
