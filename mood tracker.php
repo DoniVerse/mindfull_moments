@@ -1,44 +1,29 @@
 <?php
-// Start the session
-session_start();
-
 require_once 'includes/autoloader.inc.php';
+// Database connection
+$servername = "localhost";
+$username = "root"; // Your MySQL username
+$password = ""; // Your MySQL password
+$dbname = "mood_tracker"; // Your database name
 
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check if the user is logged in
-if (isset($_SESSION['username'])) {
-    $username = htmlspecialchars($_SESSION['username']);  // Sanitize output
-} 
-?>
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mindful Moments</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="css/landing.css">
-  <script type="text/javascript" src="javascript/landing.js" defer></script>
-</head>
+    <title>Mood</title>
+    <link rel="stylesheet" href="mood tracker.css">
+    <link rel="stylesheet" href="landing.css">
+  <script type="text/javascript" src="landing.js" defer></script>
+  </head>
 <body>
-    
-  
   <nav id="sidebar">
-    <div class="sidebar-profile" onclick="toggleProfileMenu()">
-      <img src="img/default_pic.png" alt="Profile Picture" id="profilePic">
-      
-  </div>
-
-  <!-- Collapsible Profile Menu -->
-  <ul id="profileMenu" class="profile-menu">
-      <li>
-          <span class="profile-username" id="usernameDisplay"><?php echo $username?></span>
-      </li>
-      <li>
-          <a href="edit_profile.php" target="_parent" class="edit-profile-btn">Edit Profile</a>
-      </li>
-  </ul>
     <ul>
       <li>
         <span class="logo">Mindful Moments</span>
@@ -47,7 +32,7 @@ if (isset($_SESSION['username'])) {
         </button>
         </li>
         <li>
-            <a href="dashboard.php">
+            <a href="dashboard.html">
               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M520-640v-160q0-17 11.5-28.5T560-840h240q17 0 28.5 11.5T840-800v160q0 17-11.5 28.5T800-600H560q-17 0-28.5-11.5T520-640ZM120-480v-320q0-17 11.5-28.5T160-840h240q17 0 28.5 11.5T440-800v320q0 17-11.5 28.5T400-440H160q-17 0-28.5-11.5T120-480Zm400 320v-320q0-17 11.5-28.5T560-520h240q17 0 28.5 11.5T840-480v320q0 17-11.5 28.5T800-120H560q-17 0-28.5-11.5T520-160Zm-400 0v-160q0-17 11.5-28.5T160-360h240q17 0 28.5 11.5T440-320v160q0 17-11.5 28.5T400-120H160q-17 0-28.5-11.5T120-160Zm80-360h160v-240H200v240Zm400 320h160v-240H600v240Zm0-480h160v-80H600v80ZM200-200h160v-80H200v80Zm160-320Zm240-160Zm0 240ZM360-280Z"/></svg>
               <span>Dashboard</span>
             </a>
@@ -58,29 +43,33 @@ if (isset($_SESSION['username'])) {
               <span>Mood Tracker</span>
             </a>
           </li>
-          
           <li>
-            <a href="journal.php">
+            <a href="Gratitude journal.html">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M160-400v-80h280v80H160Zm0-160v-80h440v80H160Zm0-160v-80h440v80H160Zm360 560v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q8 9 12.5 20t4.5 22q0 11-4 22.5T863-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z"/></svg>
 
 
               <span>Gratitude journal</span>
             </a>
           </li>
-          
           <li>
+            <a href="Affirmation.html">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M216-176q-45-45-70.5-104T120-402q0-63 24-124.5T222-642q35-35 86.5-60t122-39.5Q501-756 591.5-759t202.5 7q8 106 5 195t-16.5 160.5q-13.5 71.5-38 125T684-182q-53 53-112.5 77.5T450-80q-65 0-127-25.5T216-176Zm112-16q29 17 59.5 24.5T450-160q46 0 91-18.5t86-59.5q18-18 36.5-50.5t32-85Q709-426 716-500.5t2-177.5q-49-2-110.5-1.5T485-670q-61 9-116 29t-90 55q-45 45-62 89t-17 85q0 59 22.5 103.5T262-246q42-80 111-153.5T534-520q-72 63-125.5 142.5T328-192Zm0 0Zm0 0Z"/></svg>
+
+
+              <span>Affirmation</span>
+            </a>
+          </li>
           <li>
-            <a href="exercice.html">
+            <button onclick=toggleSubMenu(this) class="dropdown-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m536-84-56-56 142-142-340-340-142 142-56-56 56-58-56-56 84-84-56-58 56-56 58 56 84-84 56 56 58-56 56 56-142 142 340 340 142-142 56 56-56 58 56 56-84 84 56 58-56 56-58-56-84 84-56-56-58 56Z"/></svg>
               <span>Exercice</span>
               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-361q-8 0-15-2.5t-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5Z"/></svg>
-              </a>
-
+            </button>
             <ul class="sub-menu">
               <div>
-                <li><a href="yoga.html">Yoga</a></li>
-                <li><a href="Pilates.html">Pilates</a></li>
-                <li><a href="meditation.html">Meditation</a></li>
+                <li><a href="#">Yoga</a></li>
+                <li><a href="#">pilates</a></li>
+                <li><a href="#">Pmeditation</a></li>
               </div>
             </ul>
           </li>
@@ -94,9 +83,9 @@ if (isset($_SESSION['username'])) {
                 </button>
                 <ul class="sub-menu">
                   <div>
-                    <li><a href="soundtrack.php">sounds</a></li>
-                    <!-- <li><a href="#">Document</a></li>
-                    <li><a href="#">Project</a></li> -->
+                    <li><a href="#">Folder</a></li>
+                    <li><a href="#">Document</a></li>
+                    <li><a href="#">Project</a></li>
                   </div>
                 </ul>
               </li>
@@ -121,51 +110,62 @@ if (isset($_SESSION['username'])) {
                     </a>
                   </li>
                   </nav>
-                  <main>
-                    <div class="container">
-                      <h2>Mood tracker</h2>
-                      <p>Log your daily emotions and track your mood trends over the past week.</p>
-                    </div>
-                    <div class="container">
-                      <h2> Daily promt</h2>
-                      <p>Engage in mindfulness exercises with new prompts every day</p>
-                    </div>
-                    <div class="container">
-                      <h2>Mental health conditions</h2>
-                      <p>Access articles and information about mental health conditions and coping strategies.</p>
-                    </div>
-                    <div class="container">
-                        <h2>self assesement</h2>
-                        <p>Our journey began with a simple idea: to create a space where people can reconnect with themselves through intentional movement and daily practices. We saw the need for a calm, accessible approach to wellness that fits into modern life.</p>
-                        <button class="styled-button">
-                            <a href="quiz.html" >start</a>
-                        </button>
-                        <style>
-                            .styled-button {
-    background-color: #89A8B2; /* Button color */
-    color: white; /* Text color */
-    padding: 10px 20px; /* Padding inside the button */
-    border: none; /* Remove default border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    font-size: 16px; /* Font size */
-    font-weight: bold; /* Bold text */
-    text-transform: uppercase; /* Uppercase text */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-    transition: all 0.3s ease; /* Smooth animation */
-   
-}
-.styled-button a{
-     text-decoration: none;
-}
-.styled-button:hover {
-    background-color: #B3C8CF; /* Lighter color on hover */
-    transform: scale(1.05); /* Slightly enlarge button */
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3); /* Enhance shadow */
-}
-                        </style>
-                      </div>
-                  </main>
 
+<!-- </head>
+<body> -->
+    <div class="worksheet">
+        <h1>Track Your Emotions</h1>
+        <h2> Log your emotions daily by choosing from a list of moods.</h2>
+        <!-- <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date">
+        </form> -->
+        <p class="instructions">
+           
+        </p>
+        <div class="grid">
+            <div class="emotion">
+                <img src="joy.jpg" alt="Joy">
+                <h2>JOY</h2>
+                <!-- <input type="text" placeholder="I might feel...">
+                <textarea placeholder="Actions"></textarea> -->
+            </div>
+            <div class="emotion">
+                
+                <img src="sad.jpg" alt="Sadness">
+                <h2>SAD</h2>
+                <!-- <input type="text" placeholder="I might feel...">
+                <textarea placeholder="Actions"></textarea> -->
+            </div>
+            <div class="emotion">
+                <img src="anger.jpg" alt="Anger">
+                <h2>ANGER</h2>
+                <!-- <input type="text" placeholder="I might feel...">
+                <textarea placeholder="Actions"></textarea> -->
+            </div>
+            <div class="emotion">
+                <img src="fear.jpg" alt="Fear">
+                <h2>FEAR</h2>
+                <!-- <input type="text" placeholder="I might feel...">
+                <textarea placeholder="Actions"></textarea> -->
+            </div>
+            <div class="emotion">
+                <img src="anxi.jpg" alt="anxi">
+                <h2>ANXIETY</h2>
+                <!-- <input type="text" placeholder="I might feel...">
+                <textarea placeholder="Actions"></textarea> -->
+            </div>
+            <div class="emotion">
+                <img src="disgust.jpg" alt="Disgust">
+                <h2>DISGUST</h2>
+                <!-- <input type="text" placeholder="I might feel...">
+                <textarea placeholder="Actions"></textarea> -->
+            </div>
+        </div>
+    </div>
+    <!-- <div class="footer">
+        &copy; 2024 Mindful Moments. All rights reserved. -->
 </body>
 </html>

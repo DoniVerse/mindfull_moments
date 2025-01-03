@@ -1,15 +1,17 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mood</title>
-    <link rel="stylesheet" href="mood tracker.css">
-    <link rel="stylesheet" href="landing.css">
-  <script type="text/javascript" src="landing.js" defer></script>
-  </head>
+    <title>Mindful Moments</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
 <body>
+    <link rel="stylesheet" href="exercice.css">
+    <link rel="stylesheet" href="landing.css">
+    <link rel="stylesheet" href="scripts.js">
+  <script type="text/javascript" src="landing.js" defer></script>
+  
   <nav id="sidebar">
     <ul>
       <li>
@@ -50,17 +52,17 @@
             <button onclick=toggleSubMenu(this) class="dropdown-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m536-84-56-56 142-142-340-340-142 142-56-56 56-58-56-56 84-84-56-58 56-56 58 56 84-84 56 56 58-56 56 56-142 142 340 340 142-142 56 56-56 58 56 56-84 84 56 58-56 56-58-56-84 84-56-56-58 56Z"/></svg>
               <span>Exercice</span>
+              <a href="exercice.html"></a>
               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-361q-8 0-15-2.5t-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5Z"/></svg>
             </button>
-            <ul class="sub-menu">
+            <!-- <ul class="sub-menu">
               <div>
                 <li><a href="#">Yoga</a></li>
                 <li><a href="#">pilates</a></li>
                 <li><a href="#">Pmeditation</a></li>
               </div>
-            </ul>
+            </ul> -->
           </li>
-          <li>
             <li>
                 <button onclick=toggleSubMenu(this) class="dropdown-btn">
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M360-120H200q-33 0-56.5-23.5T120-200v-280q0-75 28.5-140.5t77-114q48.5-48.5 114-77T480-840q75 0 140.5 28.5t114 77q48.5 48.5 77 114T840-480v280q0 33-23.5 56.5T760-120H600v-320h160v-40q0-117-81.5-198.5T480-760q-117 0-198.5 81.5T200-480v40h160v320Zm-80-240h-80v160h80v-160Zm400 0v160h80v-160h-80Zm-400 0h-80 80Zm400 0h80-80Z"/></svg>
@@ -97,62 +99,52 @@
                     </a>
                   </li>
                   </nav>
-
-<!-- </head>
+                  
+               <!-- </head>
 <body> -->
-    <div class="worksheet">
-        <h1>Track Your Emotions</h1>
-        <h2> Log your emotions daily by choosing from a list of moods.</h2>
-        <!-- <form>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name">
-            <label for="date">Date:</label>
-            <input type="date" id="date" name="date">
-        </form> -->
-        <p class="instructions">
+  <!-- </head>
+    <div class="sidebar">
+      <ul>
+          <li><button id="exerciseBtn">Exercise</button>
+              Dropdown List for Exercises -->
+              <ul id="dropdown" class="dropdown-content">
+                  <li><a href="#" id="yogaBtn">Yoga</a></li>
+                  <li><a href="#" id="meditationBtn">Meditation</a></li>
+                  <li><a href="#" id="pilatesBtn">Pilates</a></li>
+              </ul>
+          </li>
+      </ul>
+  </div>
+   <div class="grid">
+  <div class="exercice">
+      <div id="videoContainer">
+          <!-- Video will appear here -->
+          <video width="320" height="240" controls autoplay loop>
+            <source src="meditation.mp4.mp4" type="video/mp4">
+            <input type="text" placeholder>
+                <textarea placeholder="Actions"></textarea> 
            
-        </p>
-        <div class="grid">
-            <div class="emotion">
-                <img src="joy.jpg" alt="Joy">
-                <h2>JOY</h2>
-                <!-- <input type="text" placeholder="I might feel...">
-                <textarea placeholder="Actions"></textarea> -->
-            </div>
-            <div class="emotion">
-                
-                <img src="sad.jpg" alt="Sadness">
-                <h2>SAD</h2>
-                <!-- <input type="text" placeholder="I might feel...">
-                <textarea placeholder="Actions"></textarea> -->
-            </div>
-            <div class="emotion">
-                <img src="anger.jpg" alt="Anger">
-                <h2>ANGER</h2>
-                <!-- <input type="text" placeholder="I might feel...">
-                <textarea placeholder="Actions"></textarea> -->
-            </div>
-            <div class="emotion">
-                <img src="fear.jpg" alt="Fear">
-                <h2>FEAR</h2>
-                <!-- <input type="text" placeholder="I might feel...">
-                <textarea placeholder="Actions"></textarea> -->
-            </div>
-            <div class="emotion">
-                <img src="anxi.jpg" alt="anxi">
-                <h2>ANXIETY</h2>
-                <!-- <input type="text" placeholder="I might feel...">
-                <textarea placeholder="Actions"></textarea> -->
-            </div>
-            <div class="emotion">
-                <img src="disgust.jpg" alt="Disgust">
-                <h2>DISGUST</h2>
-                <!-- <input type="text" placeholder="I might feel...">
-                <textarea placeholder="Actions"></textarea> -->
-            </div>
-        </div>
-    </div>
-    <!-- <div class="footer">
-        &copy; 2024 Mindful Moments. All rights reserved. -->
+        </video>
+        <div class="exercice">
+          <div id="videoContainer">
+              <!-- Video will appear here -->
+              <video width="320" height="240" controls autoplay loop>
+                <source src="pilates.mp4" type="video/mp4">
+                <input type="text" placeholder>
+                <textarea placeholder="Actions"></textarea> 
+            </video>
+            <div class="exercice">
+              <div id="videoContainer">
+                  <!-- Video will appear here -->
+                  <video width="320" height="240" controls autoplay loop>
+                    <source src="yoga.mp4" type="video/mp4">
+                    <input type="text" placeholder>
+                    <textarea placeholder="Actions"></textarea> 
+                </video>
+      </div>
+  </div>
+  </div>
 </body>
 </html>
+  </body>
+  </html>

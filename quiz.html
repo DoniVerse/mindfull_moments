@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psychology Quiz</title>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Psychology Quiz</h1>
+        <form action="quiz.php" method="POST">
+            <div class="question">
+                <p>1. How often do you feel stressed?</p>
+                <label><input type="radio" name="q1" value="Often"> Often</label>
+                <label><input type="radio" name="q1" value="Sometimes"> Sometimes</label>
+                <label><input type="radio" name="q1" value="Rarely"> Rarely</label>
+            </div>
+            <div class="question">
+                <p>2. Do you find it hard to concentrate?</p>
+                <label><input type="radio" name="q2" value="Yes"> Yes</label>
+                <label><input type="radio" name="q2" value="No"> No</label>
+            </div>
+            <div class="question">
+                <p>3. How often do you exercise?</p>
+                <label><input type="radio" name="q3" value="Daily"> Daily</label>
+                <label><input type="radio" name="q3" value="Weekly"> Weekly</label>
+                <label><input type="radio" name="q3" value="Rarely"> Rarely</label>
+            </div>
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
