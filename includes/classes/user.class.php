@@ -79,11 +79,11 @@ class User extends database {
         session_unset();
         session_destroy();
     }
-    public function updateProfile($userId, $username) {
+    public function updateProfile($userId, $username, $profileImage) {
         // Create a secure SQL query using prepared statements
         $sql = "UPDATE users 
                 SET username = ?, 
-                    
+                    profile_picture = ? 
                 WHERE id = ?";
     
         try {
@@ -96,7 +96,7 @@ class User extends database {
             }
     
             // Bind parameters securely
-            $stmt->bind_param("si", $username, $userId);
+            $stmt->bind_param("ssi", $username, $profile_picture, $userId);
     
             // Execute the query
             if (!$stmt->execute()) {
@@ -104,6 +104,7 @@ class User extends database {
             }
     
             // Update the session username after a successful update
+            $_SESSION['profile_picture'] = $profile_picture;
             $_SESSION['username'] = $username;
     
             // Close the statement and return success
@@ -119,6 +120,7 @@ class User extends database {
     
     
 }
+
 
 
 

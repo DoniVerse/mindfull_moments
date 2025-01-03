@@ -20,5 +20,5 @@ class database {
         if($this->conn) {
             $this->conn->close();
         }
-    }
+    } 
 }

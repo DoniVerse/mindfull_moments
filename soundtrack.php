@@ -62,7 +62,7 @@ body {
 }
 
 .songItem img {
-    width: 150px;
+    width: 130px;
     margin: 16px 0;
     border-radius: 34px;
 }
@@ -121,7 +121,7 @@ body {
 
 
 #masterSongName{
-    font-size: 25px;
+    font-size: 23px;
     font-weight: 600px;
 }
 
@@ -157,73 +157,63 @@ body {
                     <div class="songItem">
                         <img src="./songIMG/3.jpg" alt="3">
                         <span class="songName"> </span>
-                        <span class="songlistplay"><span class="timestamp"><i id="2" class="far songItemPlay fa-play-circle"></i> </span></span>
+                        <span class="songlistplay"><span class="timestamp">02:07<i id="2" class="far songItemPlay fa-play-circle"></i> </span></span>
                     </div>
                     <div class="songItem">
                         <img src="./songIMG/4.jpg" alt="4">
                         <span class="songName"> </span>
-                        <span class="songlistplay"><span class="timestamp"><i id="3" class="far songItemPlay fa-play-circle"></i> </span></span>
+                        <span class="songlistplay"><span class="timestamp">01:49<i id="3" class="far songItemPlay fa-play-circle"></i> </span></span>
                     </div>
                     <div class="songItem">
                         <img src="./songIMG/5.jpg" alt="5">
                         <span class="songName"> </span>
-                        <span class="songlistplay"><span class="timestamp"> <i id="4" class="far songItemPlay fa-play-circle"></i> </span></span>
+                        <span class="songlistplay"><span class="timestamp">04:03<i id="4" class="far songItemPlay fa-play-circle"></i> </span></span>
                     </div>
                     <div class="songItem">
                         <img src="./songIMG/6.jpg" alt="6">
                         <span class="songName"> </span>
-                        <span class="songlistplay"><span class="timestamp"> <i id="5" class="far songItemPlay fa-play-circle"></i> </span></span>
+                        <span class="songlistplay"><span class="timestamp">06:52<i id="5" class="far songItemPlay fa-play-circle"></i> </span></span>
                     </div>
                     <div class="songItem">
                         <img src="./songIMG/7.jpg" alt="7">
                         <span class="songName"> </span>
-                        <span class="songlistplay"><span class="timestamp"> <i id="6" class="far songItemPlay fa-play-circle"></i> </span></span>
+                        <span class="songlistplay"><span class="timestamp">02:27<i id="6" class="far songItemPlay fa-play-circle"></i> </span></span>
                     </div>
                     <div class="songItem">
                         <img src="./songIMG/8.jpg" alt="8">
                         <span class="songName"> </span>
-                        <span class="songlistplay"><span class="timestamp"> <i id="7" class="far songItemPlay fa-play-circle"></i> </span></span>
+                        <span class="songlistplay"><span class="timestamp">02:18<i id="7" class="far songItemPlay fa-play-circle"></i> </span></span>
                     </div>
                     <div class="songItem">
                         <img src="./songIMG/9.jpg" alt="9">
                         <span class="songName"> </span>
-                        <span class="songlistplay"><span class="timestamp"> <i id="8" class="far songItemPlay fa-play-circle"></i> </span></span>
+                        <span class="songlistplay"><span class="timestamp">01:42<i id="8" class="far songItemPlay fa-play-circle"></i> </span></span>
                     </div>
                     <div class="songItem">
                         <img src="./songIMG/10.jpg" alt="10">
                         <span class="songName"> </span>
-                        <span class="songlistplay"><span class="timestamp"> <i id="9" class="far songItemPlay fa-play-circle"></i> </span></span>
+                        <span class="songlistplay"><span class="timestamp">02:27<i id="9" class="far songItemPlay fa-play-circle"></i> </span></span>
                     </div>
                     <div class="songItem">
                         <img src="./songIMG/11.jpg" alt="11">
                         <span class="songName"> </span>
-                        <span class="songlistplay"><span class="timestamp"><i id="10" class="far songItemPlay fa-play-circle"></i> </span></span>
+                        <span class="songlistplay"><span class="timestamp">02:55<i id="10" class="far songItemPlay fa-play-circle"></i> </span></span>
                     </div>
                     <div class="songItem">
                         <img src="./songIMG/12.jpg" alt="12">
                         <span class="songName"> </span>
-                        <span class="songlistplay"><span class="timestamp"> <i id="11" class="far songItemPlay fa-play-circle"></i> </span></span>
+                        <span class="songlistplay"><span class="timestamp">01:53<i id="11" class="far songItemPlay fa-play-circle"></i> </span></span>
                     </div>
                     <div class="songItem">
                         <img src="./songIMG/13.jpg" alt="13">
                         <span class="songName"> </span>
-                        <span class="songlistplay"><span class="timestamp"> <i id="12" class="far songItemPlay fa-play-circle"></i> </span></span>
+                        <span class="songlistplay"><span class="timestamp">03:37<i id="12" class="far songItemPlay fa-play-circle"></i> </span></span>
                     </div>
                     <div class="songItem">
                         <img src="./songIMG/14.jpg" alt="14">
                         <span class="songName"> </span>
-                        <span class="songlistplay"><span class="timestamp"> <i id="13" class="far songItemPlay fa-play-circle"></i> </span></span>
-                    </div>
-                    <div class="songItem">
-                        <img src="./songIMG/15.jpg" alt="15">
-                        <span class="songName"> </span>
-                        <span class="songlistplay"><span class="timestamp"> <i id="14" class="far songItemPlay fa-play-circle"></i> </span></span>
-                    </div>
-                    <div class="songItem">
-                        <img src="./songIMG/16.jpg" alt="16">
-                        <span class="songName"> </span>
-                        <span class="songlistplay"><span class="timestamp"><i id="15" class="far songItemPlay fa-play-circle"></i> </span></span>
-                    </div>
+                        <span class="songlistplay"><span class="timestamp">02:07<i id="13" class="far songItemPlay fa-play-circle"></i> </span></span>
+</div>
                 </div>
                
             </div>
@@ -239,10 +229,10 @@ body {
             <i class="fas fa-3x fa-step-forward" id="next"></i>
         </div>
         <div class="songInfo">
-            <img src="./playing.gif" width="42px" alt="" id="gif"> <span id="masterSongName">sound</span>
+            <img src="songIMG/playing.gif" width="42px" alt="" id="gif"> <span id="masterSongName">sound</span>
         </div>
     </div>
-    <script src="javascript./sound.js"></script>
+    <script src="javascript/sound.js"></script>
     <script src="https://kit.fontawesome.com/26504e4a1f.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
