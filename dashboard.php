@@ -94,7 +94,7 @@ if (isset($_SESSION['username'])) {
                 </button>
                 <ul class="sub-menu">
                   <div>
-                    <li><a href="soundtrack.php">sounds</a></li>
+                    <li><a href="soundtrack.html">sounds</a></li>
                     <!-- <li><a href="#">Document</a></li>
                     <li><a href="#">Project</a></li> -->
                   </div>
