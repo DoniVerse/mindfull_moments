@@ -95,8 +95,7 @@ if (isset($_SESSION['username'])) {
                 <ul class="sub-menu">
                   <div>
                     <li><a href="soundtrack.html">sounds</a></li>
-                    <!-- <li><a href="#">Document</a></li>
-                    <li><a href="#">Project</a></li> -->
+                   
                   </div>
                 </ul>
               </li>
@@ -142,26 +141,26 @@ if (isset($_SESSION['username'])) {
                         </button>
                         <style>
                             .styled-button {
-    background-color: #89A8B2; /* Button color */
-    color: white; /* Text color */
-    padding: 10px 20px; /* Padding inside the button */
-    border: none; /* Remove default border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    font-size: 16px; /* Font size */
-    font-weight: bold; /* Bold text */
-    text-transform: uppercase; /* Uppercase text */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-    transition: all 0.3s ease; /* Smooth animation */
+    background-color: #89A8B2; 
+    color: white;
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer;
+    font-size: 16px; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
+    transition: all 0.3s ease; 
    
 }
 .styled-button a{
      text-decoration: none;
 }
 .styled-button:hover {
-    background-color: #B3C8CF; /* Lighter color on hover */
-    transform: scale(1.05); /* Slightly enlarge button */
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3); /* Enhance shadow */
+    background-color: #B3C8CF; 
+    transform: scale(1.05); 
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3); 
 }
                         </style>
                       </div>
