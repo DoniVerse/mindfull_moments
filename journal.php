@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
 $host = 'localhost';
 $db = 'journal_db';
@@ -45,7 +45,7 @@ if (isset($_GET['delete'])) {
 
 
 $result = $conn->query("SELECT * FROM journals ORDER BY created_at DESC");
-?>
+?> -->
 
 <!DOCTYPE html>
 <html lang="en">
