@@ -29,8 +29,8 @@ $result=  $this->getUser($username,$password);
         session_destroy();
     }
 
-    public function updatePro($userId, $username, $profileImage){
-        $result=$this->updateProfile($userId, $username, $profileImage);
+    public function updatePro($userId, $username, $profile_picture){
+        $result=$this->updateProfile($userId, $username,  $profile_picturee);
         return $result;
     }
 

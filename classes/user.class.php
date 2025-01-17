@@ -82,12 +82,12 @@ class User extends database {
     //     session_unset();
     //     session_destroy();
     // }
-    public function updateProfile($userId, $username, $profileImage) {
+    public function updateProfile($userId, $username,  $profile_picture) {
         // Create a secure SQL query using prepared statements
         $sql = "UPDATE users 
                 SET username = ?, 
                     profile_picture = ? 
-                WHERE id = ?";
+                WHERE user_id = ?";
     
         try {
             // Prepare the query
