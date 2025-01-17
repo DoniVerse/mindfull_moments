@@ -1,18 +1,13 @@
 <?php
-require_once __DIR__ . '/includes/autoloader.inc.php';
+require_once 'includes/autoloader.inc.php';
 session_start();
 
 if(isset($_POST['submit'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
     
-    $user = new User();
-    if($user->login($username, $password)) {
-        header("Location: dashboard.php");
-        exit();
-    } else {
-        $error = "Invalid username or password";
-    }
+    $user = new userController();
+    $user->login($username, $password);
 }
 ?>
 

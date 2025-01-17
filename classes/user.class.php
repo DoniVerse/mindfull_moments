@@ -8,13 +8,15 @@ class User extends database {
     public function __construct() {
         $this->connect();  // Establish connection from parent class
     }
-    public function login($username, $password) {
+   
+    public function getUser($username,$password) {
         $this->connect();
         
         $sql = "SELECT * FROM users WHERE username = ?";
         $stmt = $this->conn->prepare($sql);
         $stmt->bind_param("s", $username);
         $stmt->execute();
+        // return $stmt;
         $result = $stmt->get_result();
         
         if($row = $result->fetch_assoc()) {
@@ -23,6 +25,7 @@ class User extends database {
                 session_start();
                 $_SESSION['userId'] = $row['id'];
                 $_SESSION['username'] = $row['username'];
+                header('Location: dashboard.php');
                 $stmt->close();
                 $this->closeConnection();
                 return true;
@@ -33,7 +36,7 @@ class User extends database {
         return false;
     }
 
-    public function register($username, $password) {
+    public function setUser($username, $password) {
         $this->connect();
         
         // Check if username already exists
@@ -67,18 +70,18 @@ class User extends database {
         }
     }
 
-    public function isLoggedIn() {
-        if(isset($_SESSION['userId'])) {
-            return true;
-        }
-        return false;
-    }
+    // public function isLoggedIn() {
+    //     if(isset($_SESSION['userId'])) {
+    //         return true;
+    //     }
+    //     return false;
+    // }
 
-    public function logout() {
-        session_start();
-        session_unset();
-        session_destroy();
-    }
+    // public function logout() {
+    //     session_start();
+    //     session_unset();
+    //     session_destroy();
+    // }
     public function updateProfile($userId, $username, $profileImage) {
         // Create a secure SQL query using prepared statements
         $sql = "UPDATE users 
