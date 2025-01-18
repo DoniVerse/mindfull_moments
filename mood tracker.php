@@ -164,7 +164,7 @@ if ($conn->connect_error) {
                 <textarea placeholder="Actions"></textarea> -->
             </div>
         </div>
-        <a href="logmood.php" style="color=">wanna log your mood?</a>
+        <a href="moodindex.php" style="color=">wanna log your mood?</a>
     </div>
     <!-- <div class="footer">
         &copy; 2024 Mindful Moments. All rights reserved. -->
