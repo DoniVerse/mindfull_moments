@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     margin: 20;
     padding: 0;
     display: flex;
@@ -14,6 +14,26 @@ color: white;
 padding: 15px;
 text-align: center;
 }
+.back-button {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* Remove underline */
+    color: #B3C8CF; /* Color for the text and icon */
+    background: none; /* No background */
+    border: none; /* No border */
+    font-size: 16px; /* Adjust font size */
+    padding: 10px; /* Padding around the button */
+    cursor: pointer; /* Change cursor on hover */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.back-button:hover {
+    color: #E5E1DA; /* Change color on hover */
+}
+
+.back-button i {
+    margin-right: 5px; /* Space between the icon and text */
+}
 form {
     display: none; 
     flex-direction: column;
@@ -22,7 +42,7 @@ form {
 
 textarea {
     width: 100%;
-    height: 800px;
+    height: 500px;
     margin-bottom: 10px;
     padding: 10px;
     border: 1px solid #ccc;
