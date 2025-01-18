@@ -58,8 +58,9 @@ if (isset($_SESSION['username'])) {
               <span>Mood Tracker</span>
             </a>
           </li>
+          
           <li>
-            <a href="journal.php">
+            <a href="index.php">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M160-400v-80h280v80H160Zm0-160v-80h440v80H160Zm0-160v-80h440v80H160Zm360 560v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q8 9 12.5 20t4.5 22q0 11-4 22.5T863-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z"/></svg>
 
 
@@ -68,16 +69,18 @@ if (isset($_SESSION['username'])) {
           </li>
           
           <li>
-            <button onclick=toggleSubMenu(this) class="dropdown-btn">
+          <li>
+            <a href="exercice.html">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m536-84-56-56 142-142-340-340-142 142-56-56 56-58-56-56 84-84-56-58 56-56 58 56 84-84 56 56 58-56 56 56-142 142 340 340 142-142 56 56-56 58 56 56-84 84 56 58-56 56-58-56-84 84-56-56-58 56Z"/></svg>
               <span>Exercice</span>
               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-361q-8 0-15-2.5t-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5Z"/></svg>
-            </button>
+              </a>
+
             <ul class="sub-menu">
               <div>
-                <li><a href="#">Yoga</a></li>
-                <li><a href="#">pilates</a></li>
-                <li><a href="#">Pmeditation</a></li>
+                <li><a href="yoga.html">Yoga</a></li>
+                <li><a href="Pilates.html">Pilates</a></li>
+                <li><a href="meditation.html">Meditation</a></li>
               </div>
             </ul>
           </li>
@@ -91,9 +94,8 @@ if (isset($_SESSION['username'])) {
                 </button>
                 <ul class="sub-menu">
                   <div>
-                    <li><a href="soundtrack.php">sounds</a></li>
-                    <!-- <li><a href="#">Document</a></li>
-                    <li><a href="#">Project</a></li> -->
+                    <li><a href="soundtrack.html">sounds</a></li>
+                   
                   </div>
                 </ul>
               </li>
@@ -139,26 +141,26 @@ if (isset($_SESSION['username'])) {
                         </button>
                         <style>
                             .styled-button {
-    background-color: #89A8B2; /* Button color */
-    color: white; /* Text color */
-    padding: 10px 20px; /* Padding inside the button */
-    border: none; /* Remove default border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    font-size: 16px; /* Font size */
-    font-weight: bold; /* Bold text */
-    text-transform: uppercase; /* Uppercase text */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-    transition: all 0.3s ease; /* Smooth animation */
+    background-color: #89A8B2; 
+    color: white;
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer;
+    font-size: 16px; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
+    transition: all 0.3s ease; 
    
 }
 .styled-button a{
      text-decoration: none;
 }
 .styled-button:hover {
-    background-color: #B3C8CF; /* Lighter color on hover */
-    transform: scale(1.05); /* Slightly enlarge button */
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3); /* Enhance shadow */
+    background-color: #B3C8CF; 
+    transform: scale(1.05); 
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3); 
 }
                         </style>
                       </div>
