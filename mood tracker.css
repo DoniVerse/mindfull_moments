@@ -55,6 +55,7 @@ form input[type="date"] {
 }
 
 .emotion {
+    position: relative;
     /* text-align: center; */
     /* background: #f0f4ff; */
     padding: 10px;
@@ -66,7 +67,7 @@ form input[type="date"] {
 .emotion img {
     /* max-width: 100px;
     margin-bottom: 10px; */
-    height: 150px;
+    height: auto;
     width: 150px;
     border-radius: 50%;
     border: 10px ;

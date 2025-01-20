@@ -115,7 +115,7 @@ if ($conn->connect_error) {
 <body> -->
     <div class="worksheet">
         <h1>Track Your Emotions</h1>
-        <h2> Log your emotions daily by choosing from a list of moods.</h2>
+        <h2>  Track Your Mood For The Day.</h2>
         <!-- <form>
             <label for="name">Name:</label>
             <input type="text" id="name" name="name">
@@ -127,43 +127,44 @@ if ($conn->connect_error) {
         </p>
         <div class="grid">
             <div class="emotion">
-                <img src="joy.jpg" alt="Joy">
+                <img src="movjoy.gif" alt="Joy">
                 <h2>JOY</h2>
                 <!-- <input type="text" placeholder="I might feel...">
                 <textarea placeholder="Actions"></textarea> -->
             </div>
             <div class="emotion">
                 
-                <img src="sad.jpg" alt="Sadness">
+                <img src="movsad.gif" alt="Sadness">
                 <h2>SAD</h2>
                 <!-- <input type="text" placeholder="I might feel...">
                 <textarea placeholder="Actions"></textarea> -->
             </div>
             <div class="emotion">
-                <img src="anger.jpg" alt="Anger">
+                <img src="movanger.gif" alt="Anger">
                 <h2>ANGER</h2>
                 <!-- <input type="text" placeholder="I might feel...">
                 <textarea placeholder="Actions"></textarea> -->
             </div>
             <div class="emotion">
-                <img src="fear.jpg" alt="Fear">
+                <img src="movfear.gif" alt="Fear">
                 <h2>FEAR</h2>
                 <!-- <input type="text" placeholder="I might feel...">
                 <textarea placeholder="Actions"></textarea> -->
             </div>
             <div class="emotion">
-                <img src="anxi.jpg" alt="anxi">
+                <img src="movanxiety.gif" alt="anxi">
                 <h2>ANXIETY</h2>
                 <!-- <input type="text" placeholder="I might feel...">
                 <textarea placeholder="Actions"></textarea> -->
             </div>
             <div class="emotion">
-                <img src="disgust.jpg" alt="Disgust">
+                <img src="movdisgust.gif" alt="Disgust">
                 <h2>DISGUST</h2>
                 <!-- <input type="text" placeholder="I might feel...">
                 <textarea placeholder="Actions"></textarea> -->
             </div>
         </div>
+        <a href="moodindex.php" style="color=">wanna log your mood?</a>
     </div>
     <!-- <div class="footer">
         &copy; 2024 Mindful Moments. All rights reserved. -->
