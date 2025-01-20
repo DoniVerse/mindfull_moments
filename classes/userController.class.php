@@ -1,27 +1,47 @@
 <?php
+
 class userController extends User{
     public function login($username,$password) {
-$result=  $this->getUser($username,$password);
-// if($row = $result->fetch_assoc()) {
-//         $pwdCheck = password_verify($password, $row['password']);
-//         if($pwdCheck) {
-//             session_start();
-//             $_SESSION['userId'] = $row['id'];
-//             $_SESSION['username'] = $row['username'];
-//             // $stmt->close();
-//             // $this->closeConnection();
-//             header('Location: dashboard.php');
-//             exit;
-//         }
-//         else{
-//             return "Invalid username or password";
-//         }
-//     }
-//     return "Login Successfull";
+$data=  $this->getUser($username);
+if ($data) {
+    $pwdCheck = password_verify($password, $data['password']);
+    if ($pwdCheck) {
+        session_start();
+        $_SESSION['userId'] = $data['id'];
+        $_SESSION['username'] = $data['username'];
+        header('Location: dashboard.php');
+        exit();
+    }
+}
+return false; 
     }
     public function register($username,$password){
         $result = $this->setUser($username,$password);
-        return $result;
+        // // $data = $stmt->get_result();
+        
+        // if($result->num_rows > 0) {
+        //     $stmt->close();
+        //     $this->closeConnection();
+        //     return "Username already exists";
+        // }
+        
+        // Hash password and create user
+        // $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
+        // $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
+        // $stmt = $this->conn->prepare($sql);
+        // $stmt->bind_param("ss", $username, $hashedPwd);
+        
+        // if($stmt->execute()) {
+        //     $stmt->close();
+        //     $this->closeConnection();
+        //     return "success";
+        // } else {
+        //     $error = "Error: " . $stmt->error;
+        //     $stmt->close();
+        //     $this->closeConnection();
+        //     return $error;
+        // }
+        // return $result;
        }
        public function logout() {
         session_start();
@@ -29,8 +49,38 @@ $result=  $this->getUser($username,$password);
         session_destroy();
     }
 
-    public function updatePro($userId, $username, $profile_picture){
-        $result=$this->updateProfile($userId, $username,  $profile_picturee);
+    public function updatePro($userId, $username, $profileImage){
+        $result=$this->updateProfile($userId, $username, $profileImage);
+        
+        try {
+         
+            $stmt = $this->conn->prepare($sql);
+    
+            if (!$stmt) {
+                throw new Exception("Statement preparation failed: " . $this->conn->error);
+            }
+    
+          
+            $stmt->bind_param("ssi", $username, $profile_picture, $userId);
+    
+            
+            if (!$stmt->execute()) {
+                throw new Exception("Execution failed: " . $stmt->error);
+            }
+    
+          
+            $_SESSION['profile_picture'] = $profile_picture;
+            $_SESSION['username'] = $username;
+    
+        
+            $stmt->close();
+            return true;
+    
+        } catch (Exception $e) {
+           
+            error_log($e->getMessage());  
+            return false;
+        }
         return $result;
     }
 

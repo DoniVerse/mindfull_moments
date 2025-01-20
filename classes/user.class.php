@@ -9,31 +9,34 @@ class User extends database {
         $this->connect();  // Establish connection from parent class
     }
    
-    public function getUser($username,$password) {
+    public function getUser($username) {
         $this->connect();
         
         $sql = "SELECT * FROM users WHERE username = ?";
         $stmt = $this->conn->prepare($sql);
         $stmt->bind_param("s", $username);
         $stmt->execute();
-        // return $stmt;
+   
         $result = $stmt->get_result();
+        return $result->fetch_assoc();
+        // return $stmt;
+        // $result = $stmt->get_result();
         
-        if($row = $result->fetch_assoc()) {
-            $pwdCheck = password_verify($password, $row['password']);
-            if($pwdCheck) {
-                session_start();
-                $_SESSION['userId'] = $row['id'];
-                $_SESSION['username'] = $row['username'];
-                header('Location: dashboard.php');
-                $stmt->close();
-                $this->closeConnection();
-                return true;
-            }
-        }
-        $stmt->close();
-        $this->closeConnection();
-        return false;
+        // if($row = $result->fetch_assoc()) {
+        //     $pwdCheck = password_verify($password, $row['password']);
+        //     if($pwdCheck) {
+        //         session_start();
+        //         $_SESSION['userId'] = $row['id'];
+        //         $_SESSION['username'] = $row['username'];
+        //         header('Location: dashboard.php');
+        //         $stmt->close();
+        //         $this->closeConnection();
+        //         return true;
+        //     }
+        // }
+        // $stmt->close();
+        // $this->closeConnection();
+        // return false;
     }
 
     public function setUser($username, $password) {
@@ -82,43 +85,42 @@ class User extends database {
     //     session_unset();
     //     session_destroy();
     // }
-    public function updateProfile($userId, $username,  $profile_picture) {
+    public function updateProfile($userId, $username, $profileImage) {
         // Create a secure SQL query using prepared statements
         $sql = "UPDATE users 
                 SET username = ?, 
                     profile_picture = ? 
-                WHERE user_id = ?";
+                WHERE id = ?";
     
-        try {
-            // Prepare the query
-            $stmt = $this->conn->prepare($sql);
+        // try {
+         
+        //     $stmt = $this->conn->prepare($sql);
     
-            // Check if statement preparation was successful
-            if (!$stmt) {
-                throw new Exception("Statement preparation failed: " . $this->conn->error);
-            }
+        //     if (!$stmt) {
+        //         throw new Exception("Statement preparation failed: " . $this->conn->error);
+        //     }
     
-            // Bind parameters securely
-            $stmt->bind_param("ssi", $username, $profile_picture, $userId);
+          
+        //     $stmt->bind_param("ssi", $username, $profile_picture, $userId);
     
-            // Execute the query
-            if (!$stmt->execute()) {
-                throw new Exception("Execution failed: " . $stmt->error);
-            }
+            
+        //     if (!$stmt->execute()) {
+        //         throw new Exception("Execution failed: " . $stmt->error);
+        //     }
     
-            // Update the session username after a successful update
-            $_SESSION['profile_picture'] = $profile_picture;
-            $_SESSION['username'] = $username;
+          
+        //     $_SESSION['profile_picture'] = $profile_picture;
+        //     $_SESSION['username'] = $username;
     
-            // Close the statement and return success
-            $stmt->close();
-            return true;
+        
+        //     $stmt->close();
+        //     return true;
     
-        } catch (Exception $e) {
-            // Handle errors gracefully
-            error_log($e->getMessage());  // Log error for troubleshooting
-            return false;
-        }
+        // } catch (Exception $e) {
+           
+        //     error_log($e->getMessage());  
+        //     return false;
+        // }
     }
     
     
