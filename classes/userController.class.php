@@ -51,37 +51,7 @@ return false;
 
     public function updatePro($userId, $username, $profileImage){
         $result=$this->updateProfile($userId, $username, $profileImage);
-        
-        try {
-         
-            $stmt = $this->conn->prepare($sql);
-    
-            if (!$stmt) {
-                throw new Exception("Statement preparation failed: " . $this->conn->error);
-            }
-    
-          
-            $stmt->bind_param("ssi", $username, $profile_picture, $userId);
-    
-            
-            if (!$stmt->execute()) {
-                throw new Exception("Execution failed: " . $stmt->error);
-            }
-    
-          
-            $_SESSION['profile_picture'] = $profile_picture;
-            $_SESSION['username'] = $username;
-    
-        
-            $stmt->close();
-            return true;
-    
-        } catch (Exception $e) {
-           
-            error_log($e->getMessage());  
-            return false;
-        }
-        return $result;
+        //  return $result;
     }
 
     

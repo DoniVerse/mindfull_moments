@@ -8,7 +8,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $temp_file= $_FILES['profile_picture']['tmp_name'];
 
     $user = new userController();
-    $user->updatePro($userId, $username,  $profile_picture);
+    
+    // $user->updatePro($userId, $username,  $profile_picture);
 
     // Handle Profile Picture Upload
     // if ($profile_picture['error'] === UPLOAD_ERR_OK) {

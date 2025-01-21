@@ -92,35 +92,35 @@ class User extends database {
                     profile_picture = ? 
                 WHERE id = ?";
     
-        // try {
+        try {
          
-        //     $stmt = $this->conn->prepare($sql);
+            $stmt = $this->conn->prepare($sql);
     
-        //     if (!$stmt) {
-        //         throw new Exception("Statement preparation failed: " . $this->conn->error);
-        //     }
+            if (!$stmt) {
+                throw new Exception("Statement preparation failed: " . $this->conn->error);
+            }
     
           
-        //     $stmt->bind_param("ssi", $username, $profile_picture, $userId);
+            $stmt->bind_param("ssi", $username, $profile_picture, $userId);
     
             
-        //     if (!$stmt->execute()) {
-        //         throw new Exception("Execution failed: " . $stmt->error);
-        //     }
+            if (!$stmt->execute()) {
+                throw new Exception("Execution failed: " . $stmt->error);
+            }
     
           
-        //     $_SESSION['profile_picture'] = $profile_picture;
-        //     $_SESSION['username'] = $username;
+            $_SESSION['profile_picture'] = $profile_picture;
+            $_SESSION['username'] = $username;
     
         
-        //     $stmt->close();
-        //     return true;
+            $stmt->close();
+            return true;
     
-        // } catch (Exception $e) {
+        } catch (Exception $e) {
            
-        //     error_log($e->getMessage());  
-        //     return false;
-        // }
+            error_log($e->getMessage());  
+            return false;
+        }
     }
     
     
