@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>soundtrack</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
   @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
 
 * {
     margin: 0;
@@ -80,6 +83,18 @@ body {
 .timestamp i {
     cursor: pointer;
 }
+.icons {
+    margin-top: 14px;
+}
+
+.icons i {
+    cursor: pointer;
+}
+
+#myProgressBar {
+    width: 80vw;
+    cursor: pointer;
+}
 
 .songInfo {
     position: absolute;
@@ -119,24 +134,20 @@ body {
     }
 }
 
-
-#masterSongName{
+#masterSongName {
     font-size: 25px;
     font-weight: 600px;
 }
 
+.songItem {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
 
-    .songItem {
-        display: flex;
-        align-items: center;
-        padding: 10px;
-    }
-
-    
-
-    .songName {
-        font-size: 20   px;
-    }
+.songName {
+    font-size: 20px;
+}
 </style>
 </head>
 <body>
@@ -150,7 +161,7 @@ body {
                         <span class="songlistplay"><span class="timestamp">02:13 <i id="0" class="far songItemPlay fa-play-circle"></i> </span></span>
                     </div>
                     <div class="songItem">
-                        <img src="./songIMG/2.jpg" alt="2">
+                        <img src="./songIMG/2.jpg" alt="2"> 
                         <span class="songName"> </span>
                         <span class="songlistplay"><span class="timestamp">02:33 <i id="1" class="far songItemPlay fa-play-circle"></i> </span></span>
                     </div>
@@ -215,8 +226,7 @@ body {
                         <span class="songlistplay"><span class="timestamp">02:07<i id="13" class="far songItemPlay fa-play-circle"></i> </span></span>
 </div>
                 </div>
-               
-            </div>
+                </div>
             <div class="songBanner"></div>
         </div>
     </div>
@@ -229,7 +239,8 @@ body {
             <i class="fas fa-3x fa-step-forward" id="next"></i>
         </div>
         <div class="songInfo">
-            <img src="songIMG/playing.gif" width="42px" alt="" id="gif"> <span id="masterSongName">sound</span>
+            <img src="songIMG/playing.gif" width="42px" alt="" id="gif"> 
+            <span id="masterSongName">sound</span>
         </div>
     </div>
     <script src="javascript/sound.js"></script>
