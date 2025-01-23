@@ -178,7 +178,7 @@ if (isset($_POST['clear_history'])) {
                 background: linear-gradient(to bottom,rgb(109, 161, 206), #A1BCC7,rgb(60, 97, 122),#C1D3E3);
             }
             75% {
-                background: linear-gradient(to bottom,rgb(63, 139, 161), #A1BCC7,rgb(60, 97, 122), #C1D3E3);
+                background: linear-gradient(to bottom,rgb(109, 161, 206), #A1BCC7,rgb(60, 97, 122), #C1D3E3);
             }
             100% {
                 background: linear-gradient(to bottom, #89A8B2, #B3C8CF, #E5E1DA, #89A8B2);
