@@ -1,51 +1,51 @@
-<?php
-// Database connection
+<!-- <?php
+
 $host = 'localhost';
 $db = 'journal_db';
-$user = 'root'; // Default user for Laragon
-$pass = ''; // Default password is usually empty for Laragon
+$user = 'root'; 
+$pass = ''; 
 
-// Create connection
+
 $conn = new mysqli($host, $user, $pass, $db);
 
-// Check connection
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Handle form submission for adding entry
+
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['entry'])) {
     $entry = $_POST['entry'];
     
-    // Insert the journal entry into the database
+    
     $stmt = $conn->prepare("INSERT INTO journals (entry) VALUES (?)");
     $stmt->bind_param("s", $entry);
     $stmt->execute();
     $stmt->close();
 
-    // Redirect to the same page to prevent form resubmission
+    
     header("Location: " . $_SERVER['PHP_SELF']);
     exit();
 }
 
-// Handle deletion of an entry
+
 if (isset($_GET['delete'])) {
     $id = (int)$_GET['delete'];
 
-    // Delete the journal entry from the database
+    
     $stmt = $conn->prepare("DELETE FROM journals WHERE id = ?");
     $stmt->bind_param("i", $id);
     $stmt->execute();
     $stmt->close();
 
-    // Redirect to the same page after deletion
+   
     header("Location: " . $_SERVER['PHP_SELF']);
     exit();
 }
 
-// Fetch previous entries
+
 $result = $conn->query("SELECT * FROM journals ORDER BY created_at DESC");
-?>
+?> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -54,7 +54,7 @@ $result = $conn->query("SELECT * FROM journals ORDER BY created_at DESC");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Journal</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-     <link rel="stylesheet" href="journal.css">
+     <link rel="stylesheet" href="css/journal.css">
 </head>
 <body>
     <header>
@@ -71,8 +71,8 @@ $result = $conn->query("SELECT * FROM journals ORDER BY created_at DESC");
         <?php
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                // Limit the displayed entry to the first 100 characters
-                $short_entry = htmlspecialchars(substr($row['entry'], 0, 100)) . (strlen($row['entry']) > 100 ? '...' : '');
+               
+                $short_entry = htmlspecialchars(substr($row['entry'], 0, 200)) . (strlen($row['entry']) > 200 ? '...' : '');
                 echo "<div class='entry-box' onclick='openModal(\"" . htmlspecialchars($row['entry']) . "\")'><div class='entry-content'><strong>" . htmlspecialchars($row['created_at']) . ":</strong> " . $short_entry . "</div> <a href='?delete=" . $row['id'] . "' class='delete-button'>Delete</a></div>";
             }
         } else {
@@ -83,7 +83,7 @@ $result = $conn->query("SELECT * FROM journals ORDER BY created_at DESC");
 
     <button class="add-button" onclick="toggleForm()"><i class="fas fa-plus"></i></button>
 
-    <!-- Modal -->
+   
     <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
@@ -107,7 +107,7 @@ $result = $conn->query("SELECT * FROM journals ORDER BY created_at DESC");
             document.getElementById('myModal').style.display = 'none';
         }
 
-        // Close modal when clicking outside of it
+       
         window.onclick = function(event) {
             const modal = document.getElementById('myModal');
             if (event.target === modal) {

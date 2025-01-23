@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/includes/autoloader.inc.php';
+require_once 'includes/autoloader.inc.php';
 session_start();
 
 if(isset($_POST['submit'])) {
@@ -30,7 +30,7 @@ if(isset($_POST['submit'])) {
         and 2 special characters.";
     } 
     else {
-        $user = new User();
+        $user = new userController();
         $result = $user->register($username, $password);
         
         if($result === "success") {

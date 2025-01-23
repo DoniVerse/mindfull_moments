@@ -7,7 +7,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $profile_picture = $_FILES['profile_picture'];
     $temp_file= $_FILES['profile_picture']['tmp_name'];
 
-    $user = new User();
+    $user = new userController();
+    
+    // $user->updatePro($userId, $username,  $profile_picture);
 
     // Handle Profile Picture Upload
     // if ($profile_picture['error'] === UPLOAD_ERR_OK) {
@@ -67,7 +69,7 @@ if ($uploadOk == 0) {
 }
 
     // Update User Info
-    $result = $user->updateProfile($_SESSION['userId'], $username, $target_file);
+    $result = $user->updatePro($_SESSION['userId'], $username, $target_file);
 
     if ($result) {
         echo "Profile updated successfully!";

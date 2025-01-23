@@ -1,7 +1,7 @@
 <?php
 require_once 'includes/autoloader.inc.php';
 
-$user = new User();
+$user = new userController();
 $user->logout();
 
 header("Location: login.php");

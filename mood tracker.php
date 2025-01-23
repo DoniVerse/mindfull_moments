@@ -19,8 +19,8 @@ if ($conn->connect_error) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mood</title>
     <link rel="stylesheet" href="mood tracker.css">
-    <link rel="stylesheet" href="landing.css">
-  <script type="text/javascript" src="landing.js" defer></script>
+    <link rel="stylesheet" href="css/landing.css">
+  <script type="text/javascript" src="css/landing.js" defer></script>
   </head>
 <body>
   <nav id="sidebar">
@@ -102,7 +102,7 @@ if ($conn->connect_error) {
                     </a>
                   </li>
                   <li>
-                    <a href="Affirmation.html">
+                    <a href="logout.php">
                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg>
 
         
@@ -115,7 +115,7 @@ if ($conn->connect_error) {
 <body> -->
     <div class="worksheet">
         <h1>Track Your Emotions</h1>
-        <h2> Log your emotions daily by choosing from a list of moods.</h2>
+        <h2>  Track Your Mood For The Day.</h2>
         <!-- <form>
             <label for="name">Name:</label>
             <input type="text" id="name" name="name">
@@ -127,43 +127,44 @@ if ($conn->connect_error) {
         </p>
         <div class="grid">
             <div class="emotion">
-                <img src="joy.jpg" alt="Joy">
+                <img src="movjoy.gif" alt="Joy">
                 <h2>JOY</h2>
                 <!-- <input type="text" placeholder="I might feel...">
                 <textarea placeholder="Actions"></textarea> -->
             </div>
             <div class="emotion">
                 
-                <img src="sad.jpg" alt="Sadness">
+                <img src="movsad.gif" alt="Sadness">
                 <h2>SAD</h2>
                 <!-- <input type="text" placeholder="I might feel...">
                 <textarea placeholder="Actions"></textarea> -->
             </div>
             <div class="emotion">
-                <img src="anger.jpg" alt="Anger">
+                <img src="movanger.gif" alt="Anger">
                 <h2>ANGER</h2>
                 <!-- <input type="text" placeholder="I might feel...">
                 <textarea placeholder="Actions"></textarea> -->
             </div>
             <div class="emotion">
-                <img src="fear.jpg" alt="Fear">
+                <img src="movfear.gif" alt="Fear">
                 <h2>FEAR</h2>
                 <!-- <input type="text" placeholder="I might feel...">
                 <textarea placeholder="Actions"></textarea> -->
             </div>
             <div class="emotion">
-                <img src="anxi.jpg" alt="anxi">
+                <img src="movanxiety.gif" alt="anxi">
                 <h2>ANXIETY</h2>
                 <!-- <input type="text" placeholder="I might feel...">
                 <textarea placeholder="Actions"></textarea> -->
             </div>
             <div class="emotion">
-                <img src="disgust.jpg" alt="Disgust">
+                <img src="movdisgust.gif" alt="Disgust">
                 <h2>DISGUST</h2>
                 <!-- <input type="text" placeholder="I might feel...">
                 <textarea placeholder="Actions"></textarea> -->
             </div>
         </div>
+        <a href="moodindex.php" style="color=">wanna log your mood?</a>
     </div>
     <!-- <div class="footer">
         &copy; 2024 Mindful Moments. All rights reserved. -->
