@@ -1,5 +1,6 @@
 <?php
 require_once 'C:\Program Files\Ampps\www\mindfull_moments\classes\journal.php';
+// require_once 'classes/journal.php';
 
 class JournalController {
     private $journal;
