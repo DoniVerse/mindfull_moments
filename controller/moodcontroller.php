@@ -1,6 +1,6 @@
 <?php
 // app/controllers/MoodController.php
-require_once 'MoodModel.php';
+require_once 'classes/MoodModel.php';
 
 class MoodController {
     private $moodModel;
