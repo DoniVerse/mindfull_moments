@@ -1,16 +1,16 @@
 <?php
 require_once 'includes/autoloader.inc.php';
 // Database connection
-$servername = "localhost";
-$username = "root"; // Your MySQL username
-$password = ""; // Your MySQL password
-$dbname = "mood_tracker"; // Your database name
+// $servername = "localhost";
+// $username = "root"; // Your MySQL username
+// $password = ""; // Your MySQL password
+// $dbname = "mood_tracker"; // Your database name
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+// $conn = new mysqli($servername, $username, $password, $dbname);
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}?>
+// if ($conn->connect_error) {
+//     die("Connection failed: " . $conn->connect_error);
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,11 +19,11 @@ if ($conn->connect_error) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mood</title>
     <link rel="stylesheet" href="mood tracker.css">
-    <link rel="stylesheet" href="css/landing.css">
-  <script type="text/javascript" src="css/landing.js" defer></script>
+    <!-- <link rel="stylesheet" href="css/landing.css">
+  <script type="text/javascript" src="css/landing.js" defer></script> -->
   </head>
 <body>
-  <nav id="sidebar">
+  <!-- <nav id="sidebar">
     <ul>
       <li>
         <span class="logo">Mindful Moments</span>
@@ -112,7 +112,7 @@ if ($conn->connect_error) {
                   </nav>
 
 <!-- </head>
-<body> -->
+<body> --> -->
     <div class="worksheet">
         <h1>Track Your Emotions</h1>
         <h2>  Track Your Mood For The Day.</h2>

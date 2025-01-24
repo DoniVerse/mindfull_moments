@@ -3,237 +3,266 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>soundtrack</title>
-    <style>
-  @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body {
-    background-color:#F1F0E8;
-    color: #ffffff;
-    font-family: 'Varela Round', sans-serif;
-}
-.container {
-    flex-grow: 1;
-    min-height: 72vh;
-    background-color: #F1F0E8;
-    color: black;
-    font-family: 'Varela Round', sans-serif;
-    margin: 23px auto;
-    border-radius: 12px;
-    padding: 34px;
-}
-
-.bottom {
-    position: sticky;
-    bottom: 0;
-    height: 135px;
-    background-color: black;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.songItemContainer {
-    margin-top: 74px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 50px;
-}
-
-.songItem {
-    height: 300px;
-    width: 200px;
-    display: flex;
-    flex-direction: column;
-    background-color: #89A8B2;
-    color: black;
-    margin: 12px 0;
-    justify-content: center;
-    align-items: center;
-    border-radius: 15px;
-    text-align: center;
-}
-
-.songItem img {
-    width: 130px;
-    margin: 16px 0;
-    border-radius: 34px;
-}
-
-.songName {
-    margin: 8px 0;
-    color: white;
-}
-
-.timestamp {
-    margin: 8px 0;
-    color: white;
-}
-
-.timestamp i {
-    cursor: pointer;
-}
-
-.songInfo {
-    position: absolute;
-    left: 10vw;
-    font-family: 'Varela Round', sans-serif;
-}
-
-.songInfo img {
-    opacity: 0;
-    transition: opacity 0.4s ease-in;
-}
-
-@media only screen and (max-width: 1500px) {
-    .songItemContainer {
-        margin-top: 74px;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 50px;
-    }
-}
-
-@media only screen and (max-width: 1100px) {
-    .songItemContainer {
-        margin-top: 74px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 50px;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    .songItemContainer {
-        margin-top: 74px;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
-}
-
-
-#masterSongName{
-    font-size: 25px;
-    font-weight: 600px;
-}
-
-
-    .songItem {
-        display: flex;
-        align-items: center;
-        padding: 10px;
-    }
-
-    
-
-    .songName {
-        font-size: 20   px;
-    }
-</style>
+    <title>Responsive Music Player</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="container">
-            <div class="songList">
-                <h1 style="font-size:50px; font-weight:800;">Relaxing Sounds</h1>
-                <div class="songItemContainer">
-                    <div class="songItem">
-                        <img src="./songIMG/1.jpg" alt="1">
-                        <span class="songName"> </span>
-                        <span class="songlistplay"><span class="timestamp">02:13 <i id="0" class="far songItemPlay fa-play-circle"></i> </span></span>
-                    </div>
-                    <div class="songItem">
-                        <img src="./songIMG/2.jpg" alt="2">
-                        <span class="songName"> </span>
-                        <span class="songlistplay"><span class="timestamp">02:33 <i id="1" class="far songItemPlay fa-play-circle"></i> </span></span>
-                    </div>
-                    <div class="songItem">
-                        <img src="./songIMG/3.jpg" alt="3">
-                        <span class="songName"> </span>
-                        <span class="songlistplay"><span class="timestamp">02:07<i id="2" class="far songItemPlay fa-play-circle"></i> </span></span>
-                    </div>
-                    <div class="songItem">
-                        <img src="./songIMG/4.jpg" alt="4">
-                        <span class="songName"> </span>
-                        <span class="songlistplay"><span class="timestamp">01:49<i id="3" class="far songItemPlay fa-play-circle"></i> </span></span>
-                    </div>
-                    <div class="songItem">
-                        <img src="./songIMG/5.jpg" alt="5">
-                        <span class="songName"> </span>
-                        <span class="songlistplay"><span class="timestamp">04:03<i id="4" class="far songItemPlay fa-play-circle"></i> </span></span>
-                    </div>
-                    <div class="songItem">
-                        <img src="./songIMG/6.jpg" alt="6">
-                        <span class="songName"> </span>
-                        <span class="songlistplay"><span class="timestamp">06:52<i id="5" class="far songItemPlay fa-play-circle"></i> </span></span>
-                    </div>
-                    <div class="songItem">
-                        <img src="./songIMG/7.jpg" alt="7">
-                        <span class="songName"> </span>
-                        <span class="songlistplay"><span class="timestamp">02:27<i id="6" class="far songItemPlay fa-play-circle"></i> </span></span>
-                    </div>
-                    <div class="songItem">
-                        <img src="./songIMG/8.jpg" alt="8">
-                        <span class="songName"> </span>
-                        <span class="songlistplay"><span class="timestamp">02:18<i id="7" class="far songItemPlay fa-play-circle"></i> </span></span>
-                    </div>
-                    <div class="songItem">
-                        <img src="./songIMG/9.jpg" alt="9">
-                        <span class="songName"> </span>
-                        <span class="songlistplay"><span class="timestamp">01:42<i id="8" class="far songItemPlay fa-play-circle"></i> </span></span>
-                    </div>
-                    <div class="songItem">
-                        <img src="./songIMG/10.jpg" alt="10">
-                        <span class="songName"> </span>
-                        <span class="songlistplay"><span class="timestamp">02:27<i id="9" class="far songItemPlay fa-play-circle"></i> </span></span>
-                    </div>
-                    <div class="songItem">
-                        <img src="./songIMG/11.jpg" alt="11">
-                        <span class="songName"> </span>
-                        <span class="songlistplay"><span class="timestamp">02:55<i id="10" class="far songItemPlay fa-play-circle"></i> </span></span>
-                    </div>
-                    <div class="songItem">
-                        <img src="./songIMG/12.jpg" alt="12">
-                        <span class="songName"> </span>
-                        <span class="songlistplay"><span class="timestamp">01:53<i id="11" class="far songItemPlay fa-play-circle"></i> </span></span>
-                    </div>
-                    <div class="songItem">
-                        <img src="./songIMG/13.jpg" alt="13">
-                        <span class="songName"> </span>
-                        <span class="songlistplay"><span class="timestamp">03:37<i id="12" class="far songItemPlay fa-play-circle"></i> </span></span>
-                    </div>
-                    <div class="songItem">
-                        <img src="./songIMG/14.jpg" alt="14">
-                        <span class="songName"> </span>
-                        <span class="songlistplay"><span class="timestamp">02:07<i id="13" class="far songItemPlay fa-play-circle"></i> </span></span>
-</div>
-                </div>
-               
+    <div class="music-players">
+        <!-- Repeat this block for each song -->
+        <div class="music-player">
+            <div class="song-info">
+                <img id="song-cover-1" src="songIMG/img1.jpg" alt="Song Cover" />
+                <h2 id="song-name-1">Soound 1</h2>
             </div>
-            <div class="songBanner"></div>
+            <audio id="audio-1" src="songs/song1.mp3" preload="metadata"></audio>
+            <div class="controls">
+                <button id="prev-1">Prev</button>
+                <button id="play-1">Play</button>
+                <button id="pause-1">Pause</button>
+                <button id="next-1">Next</button>
+            </div>
+            <input type="range" id="progress-1" value="0" />
+            <input type="range" id="volume-1" value="100" />
         </div>
-    </div>
-
-    <div class="bottom">
-        <input type="range" name="range" id="myProgressBar" min="0" value="0" max="100">
-        <div class="icons">
-            <i class="fas fa-3x fa-step-backward" id="previous"></i>
-            <i class="far fa-3x fa-play-circle" id="masterPlay"></i>
-            <i class="fas fa-3x fa-step-forward" id="next"></i>
+        <!-- Repeat the above block for 14 more songs -->
+        <div class="music-player">
+            <div class="song-info">
+                <img id="song-cover-2" src="songIMG/img2.jpg" alt="Song Cover" />
+                <h2 id="song-name-2">Sound 2</h2>
+            </div>
+            <audio id="audio-2" src="songs/song3.mp3" preload="metadata"></audio>
+            <div class="controls">
+                <button id="prev-2">Prev</button>
+                <button id="play-2">Play</button>
+                <button id="pause-2">Pause</button>
+                <button id="next-2">Next</button>
+            </div>
+            <input type="range" id="progress-2" value="0" />
+            <input type="range" id="volume-2" value="100" />
         </div>
-        <div class="songInfo">
-            <img src="songIMG/playing.gif" width="42px" alt="" id="gif"> <span id="masterSongName">sound</span>
-        </div>
+        <!-- Add similar blocks for songs 3 to 15 -->
+        <!-- <div class="music-players"> -->
+            <!-- Repeat this block for each song -->
+            <div class="music-player">
+                <div class="song-info">
+                    <img id="song-cover-1" src="songIMG/img4.jpg" alt="Song Cover" />
+                    <h2 id="song-name-1">Sound 3</h2>
+                </div>
+                <audio id="audio-3" src="songs/song4.mp3" preload="metadata"></audio>
+                <div class="controls">
+                    <button id="prev-3">Prev</button>
+                    <button id="play-3">Play</button>
+                    <button id="pause-3">Pause</button>
+                    <button id="next-3">Next</button>
+                </div>
+                <input type="range" id="progress-3" value="0" />
+                <input type="range" id="volume-3" value="100" />
+            </div>
+            <!-- <div class="music-players"> -->
+                <!-- Repeat this block for each song -->
+                <div class="music-player">
+                    <div class="song-info">
+                        <img id="song-cover-1" src="songIMG/img5.jpg" alt="Song Cover" />
+                        <h2 id="song-name-1">Sound 4</h2>
+                    </div>
+                    <audio id="audio-4" src="songs/song5.mp3" preload="metadata"></audio>
+                    <div class="controls">
+                        <button id="prev-4">Prev</button>
+                        <button id="play-4">Play</button>
+                        <button id="pause-4">Pause</button>
+                        <button id="next-4">Next</button>
+                    </div>
+                    <input type="range" id="progress-4" value="0" />
+                    <input type="range" id="volume-4" value="100" />
+                </div>
+                <!-- <div class="music-players"> -->
+                    <!-- Repeat this block for each song -->
+                    <div class="music-player">
+                        <div class="song-info">
+                            <img id="song-cover-1" src="songIMG/img6.jpg" alt="Song Cover" />
+                            <h2 id="song-name-1">Sound 5</h2>
+                        </div>
+                        <audio id="audio-5" src="songs/song6.mp3" preload="metadata"></audio>
+                        <div class="controls">
+                            <button id="prev-5">Prev</button>
+                            <button id="play-5">Play</button>
+                            <button id="pause-5">Pause</button>
+                            <button id="next-5">Next</button>
+                        </div>
+                        <input type="range" id="progress-5" value="0" />
+                        <input type="range" id="volume-5" value="100" />
+                    </div>
+                    <!-- <div class="music-players"> -->
+                        <!-- Repeat this block for each song -->
+                        <div class="music-player">
+                            <div class="song-info">
+                                <img id="song-cover-1" src="songIMG/img7.jpg" alt="Song Cover" />
+                                <h2 id="song-name-1">Sound 6</h2>
+                            </div>
+                            <audio id="audio-6" src="songs/song7.mp3" preload="metadata"></audio>
+                            <div class="controls">
+                                <button id="prev-6">Prev</button>
+                                <button id="play-6">Play</button>
+                                <button id="pause-6">Pause</button>
+                                <button id="next-6">Next</button>
+                            </div>
+                            <input type="range" id="progress-6" value="0" />
+                            <input type="range" id="volume-6" value="100" />
+                        </div>
+                        <!-- <div class="music-players"> -->
+                            <!-- Repeat this block for each song -->
+                            <div class="music-player">
+                                <div class="song-info">
+                                    <img id="song-cover-1" src="songIMG/img8.jpg" alt="Song Cover" />
+                                    <h2 id="song-name-1">Sound 7</h2>
+                                </div>
+                                <audio id="audio-7" src="songs/song8.mp3" preload="metadata"></audio>
+                                <div class="controls">
+                                    <button id="prev-7">Prev</button>
+                                    <button id="play-7">Play</button>
+                                    <button id="pause-7">Pause</button>
+                                    <button id="next-7">Next</button>
+                                </div>
+                                <input type="range" id="progress-7" value="0" />
+                                <input type="range" id="volume-7" value="100" />
+                            </div>
+                            <!-- <div class="music-players"> -->
+                                <!-- Repeat this block for each song -->
+                                <div class="music-player">
+                                    <div class="song-info">
+                                        <img id="song-cover-1" src="songIMG/img9.jpg" alt="Song Cover" />
+                                        <h2 id="song-name-1">Sound 8</h2>
+                                    </div>
+                                    <audio id="audio-8" src="songs/song9.mp3" preload="metadata"></audio>
+                                    <div class="controls">
+                                        <button id="prev-8">Prev</button>
+                                        <button id="play-8">Play</button>
+                                        <button id="pause-8">Pause</button>
+                                        <button id="next-8">Next</button>
+                                    </div>
+                                    <input type="range" id="progress-8" value="0" />
+                                    <input type="range" id="volume-8" value="100" />
+                                </div>
+                                <!-- <div class="music-players"> -->
+                                    <!-- Repeat this block for each song -->
+                                    <div class="music-player">
+                                        <div class="song-info">
+                                            <img id="song-cover-1" src="songIMG/img10.jpg" alt="Song Cover" />
+                                            <h2 id="song-name-1">Sound 9</h2>
+                                        </div>
+                                        <audio id="audio-9" src="songs/song10.mp3" preload="metadata"></audio>
+                                        <div class="controls">
+                                            <button id="prev-9">Prev</button>
+                                            <button id="play-9">Play</button>
+                                            <button id="pause-9">Pause</button>
+                                            <button id="next-9">Next</button>
+                                        </div>
+                                        <input type="range" id="progress-9" value="0" />
+                                        <input type="range" id="volume-9" value="100" />
+                                    </div>
+                                    <!-- <div class="music-players"> -->
+                                        <!-- Repeat this block for each song -->
+                                        <div class="music-player">
+                                            <div class="song-info">
+                                                <img id="song-cover-1" src="songIMG/img11.jpg" alt="Song Cover" />
+                                                <h2 id="song-name-1">Sound 10</h2>
+                                            </div>
+                                            <audio id="audio-10" src="songs/song11.mp3" preload="metadata"></audio>
+                                            <div class="controls">
+                                                <button id="prev-10">Prev</button>
+                                                <button id="play-10">Play</button>
+                                                <button id="pause-10">Pause</button>
+                                                <button id="next-10">Next</button>
+                                            </div>
+                                            <input type="range" id="progress-10" value="0" />
+                                            <input type="range" id="volume-10" value="100" />
+                                        </div>
+                                        <!-- <div class="music-players"> -->
+                                            <!-- Repeat this block for each song -->
+                                            <div class="music-player">
+                                                <div class="song-info">
+                                                    <img id="song-cover-1" src="songIMG/img12.jpg" alt="Song Cover" />
+                                                    <h2 id="song-name-1">Sound 11</h2>
+                                                </div>
+                                                <audio id="audio-11" src="songs/song12.mp3" preload="metadata"></audio>
+                                                <div class="controls">
+                                                    <button id="prev-11">Prev</button>
+                                                    <button id="play-11">Play</button>
+                                                    <button id="pause-11">Pause</button>
+                                                    <button id="next-11">Next</button>
+                                                </div>
+                                                <input type="range" id="progress-11" value="0" />
+                                                <input type="range" id="volume-11" value="100" />
+                                            </div>
+                                            <!-- <div class="music-players"> -->
+                                                <!-- Repeat this block for each song -->
+                                                <div class="music-player">
+                                                    <div class="song-info">
+                                                        <img id="song-cover-1" src="songIMG/img13.jpg" alt="Song Cover" />
+                                                        <h2 id="song-name-1">Sound 12</h2>
+                                                    </div>
+                                                    <audio id="audio-12" src="songs/song13.mp3" preload="metadata"></audio>
+                                                    <div class="controls">
+                                                        <button id="prev-12">Prev</button>
+                                                        <button id="play-12">Play</button>
+                                                        <button id="pause-12">Pause</button>
+                                                        <button id="next-12">Next</button>
+                                                    </div>
+                                                    <input type="range" id="progress-12" value="0" />
+                                                    <input type="range" id="volume-12" value="100" />
+                                                </div>
+                                                <!-- <div class="music-players"> -->
+                                                    <!-- Repeat this block for each song -->
+                                                    <div class="music-player">
+                                                        <div class="song-info">
+                                                            <img id="song-cover-1" src="songIMG/img14.jpg" alt="Song Cover" />
+                                                            <h2 id="song-name-1">Sound 13</h2>
+                                                        </div>
+                                                        <audio id="audio-13" src="songs/song14.mp3" preload="metadata"></audio>
+                                                        <div class="controls">
+                                                            <button id="prev-13">Prev</button>
+                                                            <button id="play-13">Play</button>
+                                                            <button id="pause-13">Pause</button>
+                                                            <button id="next-13">Next</button>
+                                                        </div>
+                                                        <input type="range" id="progress-13" value="0" />
+                                                        <input type="range" id="volume-13" value="100" />
+                                                    </div>
+                                                    <!-- <div class="music-players"> -->
+                                                        <!-- Repeat this block for each song -->
+                                                        <div class="music-player">
+                                                            <div class="song-info">
+                                                                <img id="song-cover-1" src="songIMG/img2.jpg" alt="Song Cover" />
+                                                                <h2 id="song-name-1">Sound 14</h2>
+                                                            </div>
+                                                            <audio id="audio-14" src="songs/song15.mp3" preload="metadata"></audio>
+                                                            <div class="controls">
+                                                                <button id="prev-14">Prev</button>
+                                                                <button id="play-14">Play</button>
+                                                                <button id="pause-14">Pause</button>
+                                                                <button id="next-14">Next</button>
+                                                            </div>
+                                                            <input type="range" id="progress-14" value="0" />
+                                                            <input type="range" id="volume-14" value="100" />
+                                                        </div>
+                                                        <!-- <div class="music-players"> -->
+                                                            <!-- Repeat this block for each song -->
+                                                            <div class="music-player">
+                                                                <div class="song-info">
+                                                                    <img id="song-cover-1" src="songIMG/img1.jpg" alt="Song Cover" />
+                                                                    <h2 id="song-name-1">Sound 15</h2>
+                                                                </div>
+                                                                <audio id="audio-15" src="songs/song1.mp3" preload="metadata"></audio>
+                                                                <div class="controls">
+                                                                    <button id="prev-15">Prev</button>
+                                                                    <button id="play-15">Play</button>
+                                                                    <button id="pause-15">Pause</button>
+                                                                    <button id="next-15">Next</button>
+                                                                </div>
+                                                                <input type="range" id="progress-15" value="0" />
+                                                                <input type="range" id="volume-15" value="100" />
+                                                            </div>
     </div>
     <script src="javascript/sound.js"></script>
-    <script src="https://kit.fontawesome.com/26504e4a1f.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>

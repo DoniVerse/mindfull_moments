@@ -1,6 +1,7 @@
 <?php
-
 require_once 'controller/JournalController.php';
+
+// require_once 'controller/JournalController.php';
 
 
 $controller = new JournalController();
