@@ -23,7 +23,7 @@ if ($conn->connect_error) {
   <script type="text/javascript" src="css/landing.js" defer></script>
   </head>
 <body>
-  <nav id="sidebar">
+  <!-- <nav id="sidebar">
     <ul>
       <li>
         <span class="logo">Mindful Moments</span>
@@ -112,7 +112,7 @@ if ($conn->connect_error) {
                   </nav>
 
 <!-- </head>
-<body> -->
+<body> --> -->
     <div class="worksheet">
         <h1>Track Your Emotions</h1>
         <h2>  Track Your Mood For The Day.</h2>
