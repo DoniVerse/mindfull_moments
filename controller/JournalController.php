@@ -1,12 +1,12 @@
 <?php
-require_once 'C:\Program Files\Ampps\www\mindfull_moments\classes\journal.php';
+require_once 'includes/autoloader.inc.php';
 // require_once 'classes/journal.php';
 
-class JournalController {
+class JournalController extends Journal {
     private $journal;
 
     public function __construct() {
-        $this->journal = new Journal('localhost','root', '123', 'user_db');
+        $this->journal = new Journal('localhost','root', '', 'user_db');
     }
 
     public function addEntry($entry) {

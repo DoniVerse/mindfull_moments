@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 require_once 'includes/autoloader.inc.php';
 // Database connection
 $servername = "localhost";
@@ -10,7 +10,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-}?>
+}?> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,8 +19,8 @@ if ($conn->connect_error) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mood</title>
     <link rel="stylesheet" href="mood tracker.css">
-    <link rel="stylesheet" href="css/landing.css">
-  <script type="text/javascript" src="css/landing.js" defer></script>
+    <!-- <link rel="stylesheet" href="css/landing.css"> -->
+  <!-- <script type="text/javascript" src="css/landing.js" defer></script> -->
   </head>
 <body>
   <!-- <nav id="sidebar">
