@@ -1,5 +1,5 @@
 <?php
-require_once 'includes/autoloader.inc.php';
+require_once 'controller/userController.class.php';
 
 $user = new userController();
 $user->logout();

@@ -1,5 +1,5 @@
 <?php
-require_once 'includes/autoloader.inc.php'
+require_once 'classes/user.class.php';
 class userController extends User{
     public function login($username,$password) {
 $data=  $this->getUser($username);
