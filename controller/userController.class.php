@@ -17,6 +17,9 @@ return false;
     }
     public function register($username,$password){
         $result = $this->setUser($username,$password);
+        if($result){
+            header('Location: login.php');  
+        }
         // // $data = $stmt->get_result();
         
         // if($result->num_rows > 0) {
