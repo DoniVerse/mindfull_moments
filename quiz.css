@@ -1,6 +1,6 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f7f7f9;
+    background-color:  #9fe917;
     margin: 0;
     padding: 20px;
     color: #333;
@@ -9,7 +9,7 @@ body {
 .container {
     max-width: 600px;
     margin: auto;
-    background: white;
+    background: #B3C7CF;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
@@ -58,4 +58,11 @@ footer {
     margin-top: 20px;
     font-size: 14px;
     color: #666;
+}
+.warning {
+    background-color: #ff9800; 
+    color: #fff; 
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
