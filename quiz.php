@@ -48,7 +48,6 @@ $isQuizCompleted = isset($_SESSION['quiz_completed']) && $_SESSION['quiz_complet
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mental Health Questionnaire</title>
     <link rel="stylesheet" href="quiz.css">
-    
 </head>
 <body>
     <div class="container">
