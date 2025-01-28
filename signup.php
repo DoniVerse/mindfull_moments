@@ -7,9 +7,9 @@ if(isset($_POST['submit'])) {
     $password = $_POST['password'];
     $email = $_POST['email'];
     $confirmPassword = $_POST['confirm_password'];
-     // Password Validation Function
+  
     function validatePassword($password) {
-        // Regex Pattern for Validation
+       
         $pattern = '/^(?=.*[A-Z].*[A-Z])  # At least 2 uppercase letters
                      (?=.*[a-z])           # At least 1 lowercase letter
                      (?=.*\d.*\d.*\d)     # At least 3 numbers

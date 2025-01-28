@@ -1,5 +1,5 @@
 <?php
-// Start the session
+
 session_start();
 
 require_once 'includes/autoloader.inc.php';
@@ -7,7 +7,7 @@ require_once 'includes/autoloader.inc.php';
 
 // Check if the user is logged in
 if (isset($_SESSION['username'])) {
-    $username = htmlspecialchars($_SESSION['username']);  // Sanitize output
+    $username = htmlspecialchars($_SESSION['username']);  
 } 
 ?>
 
@@ -25,20 +25,15 @@ if (isset($_SESSION['username'])) {
     
   
   <nav id="sidebar">
-    <!-- <div class="sidebar-profile" onclick="toggleProfileMenu()">
-      <img src="img/default_pic.png" alt="Profile Picture" id="profilePic"> -->
-      
-  </div>
+    
 
-  <!-- Collapsible Profile Menu -->
-  <!-- <ul id="profileMenu" class="profile-menu">
+
+  <ul id="profileMenu" class="profile-menu">
       <li>
           <span class="profile-username" id="usernameDisplay"><?php echo $username?></span>
       </li>
-      <li>
-          <a href="edit_profile.php" target="_parent" class="edit-profile-btn">Edit Profile</a>
-      </li>
-  </ul> -->
+     
+  </ul>
     <ul>
       <li>
         <span class="logo">Mindful Moments</span>
@@ -84,21 +79,7 @@ if (isset($_SESSION['username'])) {
               </div>
             </ul>
           </li>
-          <!-- <li>
-            <li>
-                <button onclick=toggleSubMenu(this) class="dropdown-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M360-120H200q-33 0-56.5-23.5T120-200v-280q0-75 28.5-140.5t77-114q48.5-48.5 114-77T480-840q75 0 140.5 28.5t114 77q48.5 48.5 77 114T840-480v280q0 33-23.5 56.5T760-120H600v-320h160v-40q0-117-81.5-198.5T480-760q-117 0-198.5 81.5T200-480v40h160v320Zm-80-240h-80v160h80v-160Zm400 0v160h80v-160h-80Zm-400 0h-80 80Zm400 0h80-80Z"/></svg>
-
-                  <span>Sound tracks</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-361q-8 0-15-2.5t-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5Z"/></svg>
-                </button>
-                <ul class="sub-menu">
-                  <div>
-                    <li><a href="soundtrack.html">sounds</a></li>
-                   
-                  </div>
-                </ul>
-              </li> -->
+         
               <li>
                         <a href="soundtrack.html">
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="rgb(0, 11, 14)"><path d="M360-120H200q-33 0-56.5-23.5T120-200v-280q0-75 28.5-140.5t77-114q48.5-48.5 114-77T480-840q75 0 140.5 28.5t114 77q48.5 48.5 77 114T840-480v280q0 33-23.5 56.5T760-120H600v-320h160v-40q0-117-81.5-198.5T480-760q-117 0-198.5 81.5T200-480v40h160v320Zm-80-240h-80v160h80v-160Zm400 0v160h80v-160h-80Zm-400 0h-80 80Zm400 0h80-80Z"/></svg>
@@ -107,7 +88,7 @@ if (isset($_SESSION['username'])) {
                           <span>Sound Tracks</span>
                         </a>
                       </li>
-                    <a href="quiz.html">
+                    <a href="quiz.php">
                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="rgb(0, 11, 14)"><path d="M560-360q17 0 29.5-12.5T602-402q0-17-12.5-29.5T560-444q-17 0-29.5 12.5T518-402q0 17 12.5 29.5T560-360Zm-30-128h60q0-29 6-42.5t28-35.5q30-30 40-48.5t10-43.5q0-45-31.5-73.5T560-760q-41 0-71.5 23T446-676l54 22q9-25 24.5-37.5T560-704q24 0 39 13.5t15 36.5q0 14-8 26.5T578-596q-33 29-40.5 45.5T530-488ZM320-240q-33 0-56.5-23.5T240-320v-480q0-33 23.5-56.5T320-880h480q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H320Zm0-80h480v-480H320v480ZM160-80q-33 0-56.5-23.5T80-160v-560h80v560h560v80H160Zm160-720v480-480Z"/></svg>
 
                       <span>quiz</span>
@@ -120,11 +101,7 @@ if (isset($_SESSION['username'])) {
                           <span>conditions</span>
                         </a>
                       </li>
-                    <a href="quiz.html">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="rgb(0, 11, 14)"><path d="M560-360q17 0 29.5-12.5T602-402q0-17-12.5-29.5T560-444q-17 0-29.5 12.5T518-402q0 17 12.5 29.5T560-360Zm-30-128h60q0-29 6-42.5t28-35.5q30-30 40-48.5t10-43.5q0-45-31.5-73.5T560-760q-41 0-71.5 23T446-676l54 22q9-25 24.5-37.5T560-704q24 0 39 13.5t15 36.5q0 14-8 26.5T578-596q-33 29-40.5 45.5T530-488ZM320-240q-33 0-56.5-23.5T240-320v-480q0-33 23.5-56.5T320-880h480q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H320Zm0-80h480v-480H320v480ZM160-80q-33 0-56.5-23.5T80-160v-560h80v560h560v80H160Zm160-720v480-480Z"/></svg>
-
-                      <span>quiz</span>
-                    </a>
+              
                   </li>
                   <li>
                     <a href="logout.php">
@@ -152,7 +129,7 @@ if (isset($_SESSION['username'])) {
                         <h2>self assesement</h2>
                         <p>Our journey began with a simple idea: to create a space where people can reconnect with themselves through intentional movement and daily practices. We saw the need for a calm, accessible approach to wellness that fits into modern life.</p>
                         <button class="styled-button">
-                            <a href="quiz.html" >start</a>
+                            <a href="quiz.php" >start</a>
                         </button>
                         <style>
                             .styled-button {
