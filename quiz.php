@@ -15,21 +15,14 @@ if ($conn->connect_error) {
 }
 
 // Handle form submission
+$totalScore = 0;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $totalScore = 0;
-    $allQuestionsAnswered = true;
     for ($i = 0; $i < 10; $i++) {
-        if (!isset($_POST["response$i"])) {
-            $allQuestionsAnswered = false;
-            break;
+        if (isset($_POST["response$i"])) {
+            $totalScore += (int)$_POST["response$i"];
         }
-        $totalScore += (int)$_POST["response$i"];
     }
 
-    if (!$allQuestionsAnswered) {
-        // Display a warning message if not all questions are answered
-        echo "<div class='warning'>Please answer all questions before submitting.</div>";
-    } else 
     // Insert result into the database
     $stmt = $conn->prepare("INSERT INTO quizresults (total_score) VALUES (?)");
     $stmt->bind_param("i", $totalScore);
@@ -55,7 +48,6 @@ $isQuizCompleted = isset($_SESSION['quiz_completed']) && $_SESSION['quiz_complet
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mental Health Questionnaire</title>
     <link rel="stylesheet" href="quiz.css">
-    
 </head>
 <body>
     <div class="container">
@@ -82,9 +74,6 @@ $isQuizCompleted = isset($_SESSION['quiz_completed']) && $_SESSION['quiz_complet
                 </form>
             </div>
         <?php else: ?>
-            <?php if (!$allQuestionsAnswered): ?>
-                <div class="warning">Please answer all questions before submitting.</div>
-            <?php endif; ?>
             <form method="POST" id="quiz-form">
                 <?php
                 $questions = [
@@ -112,23 +101,6 @@ $isQuizCompleted = isset($_SESSION['quiz_completed']) && $_SESSION['quiz_complet
                 ?>
                 <button type="submit">Submit</button>
             </form>
-            <script>
-                document.getElementById("quiz-form").addEventListener("submit", function(event) {
-                    var allQuestionsAnswered = true;
-                    for (var i = 0; i < 10; i++) {
-                        var response = document.querySelector("input[name='response" + i + "']:checked");
-                        if (response === null) {
-                            allQuestionsAnswered = false;
-                            break;
-                        }
-                    }
-
-                    if (!allQuestionsAnswered) {
-                        event.preventDefault();
-                        alert("Please answer all questions before submitting.");
-                    }
-                });
-            </script>
         <?php endif; ?>
     </div>
 </body>
